@@ -1890,128 +1890,144 @@
     }
   </script>
  <style>
+ <!-- REEMPLAZA EL BLOQUE STYLE RESPONSIVE AL FINAL DE TU ARCHIVO POR ESTE -->
+<style>
   /* ===================================================
-     AJUSTES RESPONSIVE TOTALES PARA MÓVILES (MEDIAS QUERIES)
+     AJUSTES RESPONSIVE TOTALES Y POP-UP / MODAL EN MÓVILES
      =================================================== */
   @media (max-width: 768px) {
-    /* 1. Ajuste General */
+    /* 1. Contenedor general */
     body {
-      padding: 15px 10px !important;
+      padding: 10px 8px !important;
+      overflow-x: hidden !important;
     }
 
-    /* 2. Hero principal y cotizador */
-    .custom-hero {
-      padding: 25px 15px !important;
-      border-radius: 16px !important;
+    /* 2. POP-UP / MODAL COTIZADOR (SOLUCIÓN AL ERROR EN CELULAR) */
+    .modal-overlay,
+    div[class*="modal"] {
+      padding: 10px !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
-    .hero-layout {
+
+    .modal-card,
+    .modal-content,
+    .modal-body,
+    div[class*="modal-card"],
+    div[class*="modal-content"] {
+      width: 95% !important;
+      max-width: 100% !important;
+      padding: 20px 15px !important;
+      margin: 0 auto !important;
+      border-radius: 16px !important;
+      max-height: 90vh !important;
+      overflow-y: auto !important; /* Permite scroll interno si el cel es muy pequeño */
+      box-sizing: border-box !important;
+    }
+
+    /* Inputs y botones dentro del Pop-Up */
+    .modal-card input,
+    .modal-card select,
+    .modal-card button,
+    .modal-content input,
+    .modal-content select,
+    .modal-content button {
+      width: 100% !important;
+      font-size: 0.95rem !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 3. Custom Hero y Cotizador del Banner */
+    .custom-hero {
+      padding: 20px 12px !important;
+      border-radius: 14px !important;
+    }
+    .hero-layout,
+    [class*="hero-grid"] {
       grid-template-columns: 1fr !important;
-      gap: 20px !important;
+      gap: 15px !important;
     }
     .hero-main-title {
-      font-size: 1.7rem !important;
-      text-align: center;
+      font-size: 1.6rem !important;
+      text-align: center !important;
     }
     .hero-subtitle {
-      font-size: 0.9rem !important;
-      text-align: center;
+      font-size: 0.88rem !important;
+      text-align: center !important;
     }
     .quote-box {
-      padding: 15px 12px !important;
+      padding: 15px 10px !important;
+      width: 100% !important;
     }
     .quote-tabs {
       flex-wrap: wrap !important;
-      gap: 5px !important;
+      gap: 4px !important;
     }
     .tab-btn {
       font-size: 0.75rem !important;
-      padding: 8px 6px !important;
-      flex: 1 1 40% !important;
-      text-align: center;
+      padding: 8px 4px !important;
+      flex: 1 1 45% !important;
+      text-align: center !important;
     }
 
-    /* 3. Rejillas de Cursos, Aliados y Noticias */
+    /* 4. Grillas de Noticias, Cursos y Aliados */
     .partners-grid,
     .value-grid,
     .courses-grid,
-    .articles-grid {
+    .articles-grid,
+    [class*="-grid"] {
       grid-template-columns: 1fr !important;
-      gap: 18px !important;
+      gap: 15px !important;
     }
 
-    /* 4. Sección Newsroom / Noticias Tech */
+    /* 5. Noticias / Newsroom */
     .newsroom-hero {
       grid-template-columns: 1fr !important;
-      padding: 25px 18px !important;
+      padding: 20px 15px !important;
       text-align: center !important;
     }
     .newsroom-title {
-      font-size: 1.8rem !important;
+      font-size: 1.6rem !important;
     }
-    .mascot-wrapper {
-      margin-top: 15px;
-    }
-    .mascot-svg {
-      width: 150px !important;
-    }
+    .mascot-svg,
     .mascot-bg-circle {
-      width: 150px !important;
-      height: 150px !important;
+      width: 130px !important;
+      height: 130px !important;
     }
 
-    /* 5. Banners de Escuela / Moodle / Capacitaciones */
+    /* 6. Banners de Escuela / Moodle */
     .corporate-training-banner,
     .moodle-banner {
       flex-direction: column !important;
-      padding: 25px 18px !important;
+      padding: 20px 15px !important;
       text-align: center !important;
-      gap: 20px !important;
-    }
-    .moodle-info h3,
-    .corporate-info h3 {
-      font-size: 1.3rem !important;
-    }
-    .btn-moodle-direct,
-    .btn-corporate {
-      width: 100% !important;
-      text-align: center;
-      white-space: normal !important;
+      gap: 15px !important;
     }
 
-    /* 6. Banner Arriba del Footer / Canales de Atención */
+    /* 7. Footer y Banner sobre Footer */
     .footer-cta-banner,
     .cta-banner,
     footer,
-    .footer-container {
+    .footer-container,
+    [class*="footer"] {
       flex-direction: column !important;
-      padding: 25px 15px !important;
+      padding: 20px 12px !important;
       text-align: center !important;
-      gap: 20px !important;
+      gap: 15px !important;
     }
     .footer-buttons,
     .footer-channels {
+      width: 100% !important;
       display: flex !important;
       flex-direction: column !important;
-      width: 100% !important;
-      gap: 10px !important;
+      gap: 8px !important;
     }
     .footer-buttons a,
     .footer-buttons button,
     .footer-channels a {
       width: 100% !important;
-      box-sizing: border-box !important;
-    }
-
-    /* 7. FAQ Preguntas Frecuentes */
-    .faq-question {
-      padding: 14px 15px !important;
-      font-size: 0.9rem !important;
-    }
-    .faq-answer {
-      font-size: 0.85rem !important;
     }
   }
 </style>
-
 </body>
 </html>
