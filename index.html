@@ -6,7 +6,8 @@
   <title>Seguros de las Américas | Cotiza y Compara Seguros en Colombia</title>
   
   <!-- SEO & Social Graph -->
-  <meta name="description" content="Cotiza, compara y adquiere seguros de salud, vida, autos y asistencia con Seguros de las Américas. Asesoría profesional y respaldo garantizado.">
+  <meta name="description" content="Agencia internacional de seguros con altos estándares tecnológicos. Cotiza y compara seguros de salud, vida, autos y empresas en Colombia.">
+  <meta name="keywords" content="Seguros Colombia, Seguros de las Américas, Cotizar seguro auto, Medicina Prepagada, CampusLA, Sura, AXA Colpatria">
   <meta name="robots" content="index, follow">
 
   <style>
@@ -48,8 +49,30 @@
     nav a:hover { color: var(--primary-cyan); }
     .btn-nav-contact { background: var(--primary-cyan); color: #fff !important; padding: 8px 18px; border-radius: 50px; font-weight: 700 !important; }
 
-    /* HERO PRINCIPAL CON COTIZADOR EN NARANJA */
-    .custom-hero { max-width: 1150px; margin: 40px auto; background: #ffffff; border-radius: 24px; padding: 50px 40px; box-shadow: 0 15px 35px rgba(0, 33, 71, 0.06); border: 1px solid var(--border-color); position: relative; overflow: hidden; }
+    /* 1. PRIMERA SECCIÓN: PRESENTACIÓN INTERNACIONAL + CÓMO FUNCIONA */
+    .how-it-works-section { max-width: 1150px; margin: 40px auto 30px; padding: 0 20px; }
+    .how-it-works-container { background: #ffffff; border-radius: 24px; padding: 45px 35px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0, 33, 71, 0.04); text-align: center; }
+    .badge-how { background: rgba(0, 168, 232, 0.12); color: var(--primary-cyan); padding: 6px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 15px; letter-spacing: 0.5px; }
+    .how-title { font-size: 2.3rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 12px; letter-spacing: -0.5px; line-height: 1.25; }
+    .how-title span { color: var(--primary-cyan); }
+    .how-subtitle { font-size: 1.05rem; color: var(--text-muted); max-width: 850px; margin: 0 auto 40px; line-height: 1.65; }
+    .how-subtitle strong { color: var(--primary-navy); }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 25px; margin-bottom: 40px; }
+    .step-card { background: var(--light-bg); border-radius: 18px; padding: 35px 20px 25px; border: 1px solid var(--border-color); position: relative; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease; }
+    .step-card:hover { transform: translateY(-6px); border-color: var(--primary-cyan); background: #ffffff; box-shadow: 0 12px 25px rgba(0, 168, 232, 0.12); }
+    .step-number { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); width: 34px; height: 34px; background: var(--primary-navy); color: #ffffff; border-radius: 50%; font-weight: 900; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; border: 3px solid #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .step-icon { font-size: 2.3rem; margin-bottom: 12px; margin-top: 5px; }
+    .step-title { font-size: 1.15rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 10px; }
+    .step-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+    .tech-feature-strip { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; background: linear-gradient(135deg, rgba(0, 33, 71, 0.03) 0%, rgba(0, 168, 232, 0.08) 100%); padding: 22px 20px; border-radius: 16px; border: 1px dashed var(--primary-cyan); }
+    .feature-item { display: flex; align-items: center; gap: 12px; font-size: 0.88rem; color: var(--primary-navy); text-align: left; }
+    .feature-item strong { color: var(--primary-navy); }
+    .feature-icon { font-size: 1.3rem; }
+
+    /* 2. SEGUNDA SECCIÓN: HERO Y COTIZADOR INTERACTIVO */
+    .custom-hero { max-width: 1150px; margin: 0 auto 50px; background: #ffffff; border-radius: 24px; padding: 50px 40px; box-shadow: 0 15px 35px rgba(0, 33, 71, 0.06); border: 1px solid var(--border-color); position: relative; overflow: hidden; }
     .hero-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
     .hero-info { text-align: left; }
     .hero-badge-tag { background: rgba(255, 107, 53, 0.12); color: var(--brand-orange); padding: 6px 14px; border-radius: 30px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 20px; }
@@ -75,7 +98,6 @@
     .btn-cotizar-orange { width: 100%; background: var(--brand-orange); color: #ffffff; border: none; padding: 16px; border-radius: 12px; font-size: 1.05rem; font-weight: 900; cursor: pointer; transition: background 0.2s ease, transform 0.1s ease; box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3); display: flex; align-items: center; justify-content: center; gap: 10px; }
     .btn-cotizar-orange:hover { background: var(--brand-orange-hover); transform: translateY(-2px); }
     .quote-secondary-link { display: block; margin-top: 15px; text-align: center; font-size: 0.85rem; color: var(--primary-navy); font-weight: 700; text-decoration: underline; cursor: pointer; }
-    .quote-secondary-link:hover { color: var(--brand-orange); }
 
     /* CARDS DE COTIZACIÓN RÁPIDA */
     .quick-quote-grid { max-width: 1150px; margin: 0 auto 60px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; position: relative; z-index: 10; }
@@ -102,7 +124,7 @@
     .card-heading em { font-style: normal; color: var(--primary-cyan); }
     .card-description { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; flex-grow: 1; }
 
-    /* SECCIÓN DE ASEGURADORAS ALIADAS (SVG) */
+    /* 3. SECCIÓN DE ASEGURADORAS ALIADAS (12 CARDS COMPLETAS) */
     .partners-container { max-width: 1150px; margin: 60px auto; padding: 0 20px; text-align: center; }
     .section-title { font-size: 2.2rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 8px; letter-spacing: -0.5px; }
     .section-subtitle { font-size: 1rem; color: var(--text-muted); margin-bottom: 35px; }
@@ -161,7 +183,7 @@
     .author-avatar { width: 26px; height: 26px; background: var(--primary-navy); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 900; }
     .btn-read-more { color: var(--primary-cyan); text-decoration: none; font-weight: 800; font-size: 0.85rem; }
 
-    /* PREGUNTAS FRECUENTES FAQ */
+    /* 4. PREGUNTAS FRECUENTES FAQ COMPLETA CON DESPLEGABLE */
     .faq-section { max-width: 900px; margin: 60px auto; padding: 0 20px; text-align: center; }
     .faq-title { font-size: 2.2rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 35px; letter-spacing: -0.5px; }
     .faq-container { display: flex; flex-direction: column; gap: 12px; text-align: left; }
@@ -171,9 +193,12 @@
     .faq-question:hover { background: var(--hover-bg); color: var(--primary-cyan); }
     .faq-icon { font-size: 1.4rem; font-weight: 700; color: var(--primary-navy); transition: transform 0.3s ease; margin-left: 15px; }
     .faq-item.active .faq-icon { transform: rotate(45deg); color: var(--primary-cyan); }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s ease; padding: 0 24px; color: var(--text-muted); font-size: 0.95rem; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), padding 0.3s ease; padding: 0 24px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
     .faq-item.active .faq-answer { max-height: 300px; padding: 0 24px 20px 24px; }
-    .btn-see-more { margin-top: 30px; background: none; border: none; color: var(--primary-navy); font-weight: 800; font-size: 0.95rem; cursor: pointer; }
+    .btn-see-more { margin-top: 30px; background: none; border: none; color: var(--primary-navy); font-weight: 800; font-size: 0.95rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-see-more:hover { color: var(--primary-cyan); text-decoration: underline; }
+    .faq-extra { display: none; flex-direction: column; gap: 12px; margin-top: 12px; }
+    .faq-extra.show { display: flex; }
 
     /* BANNER ALIANZA CAMPUSLA */
     .campusla-integration { background: linear-gradient(135deg, var(--primary-navy) 0%, #00122e 100%); color: #ffffff; padding: 35px 25px; border-radius: 16px; max-width: 1150px; margin: 50px auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
@@ -203,18 +228,21 @@
     .btn-submit-lead { width: 100%; background: var(--whatsapp-green); color: #ffffff; border: none; padding: 14px; border-radius: 8px; font-weight: 800; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
     .close-btn { position: absolute; top: 15px; right: 15px; background: #f1f5f9; border: none; font-size: 1.2rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; color: var(--dark-text); }
 
-    /* ===================================================
-       REGLAS RESPONSIVE TOTALES PARA MÓVILES (MEDIAS QUERIES)
-       =================================================== */
+    /* REGLAS RESPONSIVE TOTALES PARA MÓVILES (MEDIAS QUERIES) */
     @media (max-width: 768px) {
       body { padding: 0 !important; }
       
       .top-bar { text-align: center; justify-content: center; font-size: 0.75rem; }
-      
       .nav-container { flex-direction: column; gap: 15px; text-align: center; }
       nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
       
-      .custom-hero { margin: 15px 10px; padding: 25px 15px !important; border-radius: 16px !important; }
+      .how-it-works-container { padding: 25px 15px !important; }
+      .how-title { font-size: 1.6rem !important; }
+      .how-subtitle { font-size: 0.9rem !important; margin-bottom: 30px !important; }
+      .steps-grid { grid-template-columns: 1fr !important; gap: 22px !important; }
+      .tech-feature-strip { flex-direction: column !important; align-items: flex-start !important; gap: 15px !important; padding: 18px 15px !important; }
+
+      .custom-hero { margin: 15px 10px 30px; padding: 25px 15px !important; border-radius: 16px !important; }
       .hero-layout { grid-template-columns: 1fr !important; gap: 20px !important; }
       .hero-main-title { font-size: 1.7rem !important; text-align: center; }
       .hero-subtitle { font-size: 0.9rem !important; text-align: center; }
@@ -270,8 +298,8 @@
       </a>
       <nav>
         <ul>
+          <li><a href="#como-funciona">¿Cómo Funciona?</a></li>
           <li><a href="#productos">Productos</a></li>
-          <li><a href="#salud" onclick="openQuoteModal('Seguros de Salud')">Salud</a></li>
           <li><a href="#aliados">Aliados</a></li>
           <li><a href="#academia">Academia</a></li>
           <li><a href="javascript:void(0)" onclick="openQuoteModal('Contacto General')" class="btn-nav-contact">Contáctanos</a></li>
@@ -280,7 +308,68 @@
     </div>
   </header>
 
-  <!-- HERO PRINCIPAL Y COTIZADOR -->
+  <!-- 1. PRIMERA SECCIÓN: PRESENTACIÓN DE SDAMERICAS Y PASO A PASO CON IA -->
+  <section class="how-it-works-section" id="como-funciona" itemscope itemtype="https://schema.org/HowTo">
+    <div class="how-it-works-container">
+      <div class="how-header">
+        <span class="badge-how">🌐 Agencia Internacional Insurtech & IA</span>
+        <h2 class="how-title" itemprop="name">¿Cómo cotizar y comparar en <span>Seguros de las Américas</span>?</h2>
+        <p class="how-subtitle" itemprop="description">
+          Somos una agencia profesional de alcance internacional estructurada con <strong>altos estándares de tecnología Insurtech e Inteligencia Artificial</strong>. Unificamos la oferta de las aseguradoras más sólidas del mercado para que asegures tu patrimonio en segundos con total respaldo técnico y legal.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <!-- PASO 1 -->
+        <div class="step-card" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+          <div class="step-number">1</div>
+          <div class="step-icon">📝</div>
+          <h3 class="step-title" itemprop="name">Ingresa la Placa o tus Datos</h3>
+          <p class="step-desc" itemprop="text">
+            Escribe la placa de tu vehículo o tu número de WhatsApp en nuestro cotizador. Nuestro motor valida la información en tiempo real sin trámites presenciales.
+          </p>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="step-card" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+          <div class="step-number">2</div>
+          <div class="step-icon">🤖</div>
+          <h3 class="step-title" itemprop="name">Comparación Inteligente con IA</h3>
+          <p class="step-desc" itemprop="text">
+            Nuestros algoritmos comparan y analizan coberturas, precios y deducibles entre más de 12 aseguradoras líderes para seleccionar las mejores opciones.
+          </p>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="step-card" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+          <div class="step-number">3</div>
+          <div class="step-icon">📱</div>
+          <h3 class="step-title" itemprop="name">Asesoría & Emisión Digital</h3>
+          <p class="step-desc" itemprop="text">
+            Recibes la propuesta estructurada directamente en tu WhatsApp. Un asesor certificado te acompaña en la expedición 100% digital e inmediata.
+          </p>
+        </div>
+      </div>
+
+      <!-- TIRA DE BENEFICIOS Y RESPALDO LEGAL / EDUCATIVO -->
+      <div class="tech-feature-strip">
+        <div class="feature-item">
+          <span class="feature-icon">🎓</span>
+          <span><strong>Respaldo Educativo Especializado:</strong> Orientación técnica continua en la gestión integral de riesgos.</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🛡️</span>
+          <span><strong>Acompañamiento Legal:</strong> Asistencia prioritaria en trámite de siniestros, avalúos y reclamaciones.</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🇨🇴</span>
+          <span><strong>Cobertura Nacional:</strong> Atención personalizada en Bogotá, Boyacá y toda Colombia.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SEGUNDA SECCIÓN: HERO Y COTIZADOR INTERACTIVO -->
   <section class="custom-hero">
     <div class="hero-layout">
 
@@ -308,7 +397,7 @@
           <button class="tab-btn" onclick="selectTab(this, 'salud')">🏥 Salud</button>
         </div>
 
-        <h3 class="quote-box-title" id="form-title">Cotiza tu Seguro Todo Riesgo</h3>
+        <h3 class="quote-box-title" id="form-title">Cotiza tu Seguro Todo Riesgo Auto</h3>
 
         <form id="hero-quote-form" onsubmit="handleQuoteSubmit(event)">
           <div class="plate-input-wrapper" id="input-container">
@@ -372,10 +461,10 @@
 
       <div class="value-card">
         <div class="icon-badge">
-          <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
         </div>
         <h3 class="card-heading">Te asesoramos <em>sin costo</em></h3>
-        <p class="card-description">Nuestros expertos revisan tu perfil sin compromisos para ayudarte a elegir la póliza que se ajusta a tu presupuesto.</p>
+        <p class="card-description">Nuestros expertos revisan tu perfil sin compromisos para ayudarte a elegir la póliza que realmente se ajusta a tus necesidades.</p>
       </div>
 
       <div class="value-card">
@@ -396,18 +485,21 @@
     </div>
   </section>
 
-  <!-- SECCIÓN DE ASEGURADORAS ALIADAS (SVG) -->
+  <!-- 3. SECCIÓN DE ASEGURADORAS ALIADAS (12 CARDS COMPLETAS EN SVG) -->
   <section class="partners-container" id="aliados">
     <h2 class="section-title">Aseguradoras Aliadas</h2>
     <p class="section-subtitle">Compara planes de Sura, AXA Colpatria, Allianz, Bolívar, HDI, Mapfre y más.</p>
 
     <div class="partners-grid">
+      <!-- 1. SURA -->
       <div class="partner-card" title="Seguros SURA">
         <svg viewBox="0 0 200 60">
           <path class="accent-cyan" d="M30 15 C45 10, 55 25, 40 40 C25 55, 10 35, 30 15 Z" />
           <text x="65" y="38" font-family="Arial, sans-serif" font-weight="900" font-size="30" letter-spacing="-1">sura</text>
         </svg>
       </div>
+
+      <!-- 2. AXA COLPATRIA -->
       <div class="partner-card" title="AXA Colpatria">
         <svg viewBox="0 0 200 60">
           <rect x="15" y="12" width="35" height="35" rx="4" class="accent-cyan" />
@@ -415,6 +507,8 @@
           <text x="58" y="38" font-family="Arial, sans-serif" font-weight="900" font-size="20">COLPATRIA</text>
         </svg>
       </div>
+
+      <!-- 3. ALLIANZ -->
       <div class="partner-card" title="Allianz">
         <svg viewBox="0 0 200 60">
           <circle cx="28" cy="30" r="16" fill="none" stroke="#64748b" stroke-width="3" class="accent-cyan" />
@@ -422,6 +516,8 @@
           <text x="52" y="38" font-family="Arial, sans-serif" font-weight="800" font-size="24">Allianz</text>
         </svg>
       </div>
+
+      <!-- 4. SEGUROS BOLÍVAR -->
       <div class="partner-card" title="Seguros Bolívar">
         <svg viewBox="0 0 200 60">
           <path d="M15 15 L35 15 L35 45 L15 45 Z" class="accent-cyan" />
@@ -429,16 +525,73 @@
           <text x="42" y="46" font-family="Arial, sans-serif" font-weight="900" font-size="18">BOLÍVAR</text>
         </svg>
       </div>
+
+      <!-- 5. MAPFRE -->
       <div class="partner-card" title="MAPFRE">
         <svg viewBox="0 0 200 60">
           <circle cx="25" cy="30" r="12" class="accent-cyan" />
           <text x="45" y="38" font-family="Arial, sans-serif" font-weight="900" font-size="24" letter-spacing="1">MAPFRE</text>
         </svg>
       </div>
+
+      <!-- 6. HDI SEGUROS -->
       <div class="partner-card" title="HDI Seguros">
         <svg viewBox="0 0 200 60">
           <text x="15" y="38" font-family="Arial, sans-serif" font-weight="900" font-size="32" class="accent-cyan">HDI</text>
           <text x="80" y="38" font-family="Arial, sans-serif" font-weight="800" font-size="18">SEGUROS</text>
+        </svg>
+      </div>
+
+      <!-- 7. SEGUROS DEL ESTADO -->
+      <div class="partner-card" title="Seguros del Estado">
+        <svg viewBox="0 0 200 60">
+          <path d="M15 20 L35 15 L35 40 L15 45 Z" class="accent-cyan" />
+          <text x="42" y="28" font-family="Arial, sans-serif" font-weight="900" font-size="14">SEGUROS DEL</text>
+          <text x="42" y="44" font-family="Arial, sans-serif" font-weight="900" font-size="18">ESTADO</text>
+        </svg>
+      </div>
+
+      <!-- 8. SEGUROS MUNDIAL -->
+      <div class="partner-card" title="Seguros Mundial">
+        <svg viewBox="0 0 200 60">
+          <circle cx="25" cy="30" r="14" fill="none" stroke="#64748b" stroke-width="3" class="accent-cyan" />
+          <path d="M15 30 L35 30 M25 16 L25 44" stroke="#64748b" stroke-width="2" />
+          <text x="45" y="32" font-family="Arial, sans-serif" font-weight="700" font-size="13">seguros</text>
+          <text x="45" y="47" font-family="Arial, sans-serif" font-weight="900" font-size="17">mundial</text>
+        </svg>
+      </div>
+
+      <!-- 9. EQUIDAD SEGUROS -->
+      <div class="partner-card" title="Equidad Seguros">
+        <svg viewBox="0 0 200 60">
+          <polygon points="15,40 28,15 41,40" class="accent-cyan" />
+          <text x="48" y="33" font-family="Arial, sans-serif" font-weight="900" font-size="18">equidad</text>
+          <text x="48" y="46" font-family="Arial, sans-serif" font-weight="600" font-size="12">SEGUROS</text>
+        </svg>
+      </div>
+
+      <!-- 10. LIBERTY SEGUROS -->
+      <div class="partner-card" title="Liberty Seguros">
+        <svg viewBox="0 0 200 60">
+          <path d="M15 15 L35 15 L30 45 L15 45 Z" class="accent-cyan" />
+          <text x="42" y="38" font-family="Arial, sans-serif" font-weight="900" font-size="22">Liberty</text>
+        </svg>
+      </div>
+
+      <!-- 11. COOMEVA -->
+      <div class="partner-card" title="Coomeva Medicina Prepagada">
+        <svg viewBox="0 0 200 60">
+          <path d="M15 30 Q25 15, 35 30 Q25 45, 15 30 Z" class="accent-cyan" />
+          <text x="42" y="38" font-family="Arial, sans-serif" font-weight="900" font-size="20">Coomeva</text>
+        </svg>
+      </div>
+
+      <!-- 12. PAN-AMERICAN LIFE -->
+      <div class="partner-card" title="Pan-American Life">
+        <svg viewBox="0 0 200 60">
+          <rect x="15" y="18" width="24" height="24" rx="12" class="accent-cyan" />
+          <text x="45" y="28" font-family="Arial, sans-serif" font-weight="900" font-size="12">PAN-AMERICAN</text>
+          <text x="45" y="42" font-family="Arial, sans-serif" font-weight="800" font-size="14">LIFE</text>
         </svg>
       </div>
     </div>
@@ -450,7 +603,7 @@
       <span class="academy-tag">🎓 Campus Virtual & Educación Financiera</span>
       <h2 class="academy-title">Academia <span>Seguros de las Américas</span></h2>
       <p class="academy-subtitle">
-        Capacítate en gestión de riesgos y prevención en nuestro campus virtual respaldado por la <strong>Escuela Andina de CampusLA</strong>.
+        Capacítate en gestión de riesgos y prevención en nuestro campus virtual respaldado por la red de <strong>CampusLA</strong>.
       </p>
     </div>
 
@@ -586,40 +739,96 @@
     </div>
   </section>
 
-  <!-- FAQ PREGUNTAS FRECUENTES -->
+  <!-- 4. SECCIÓN DE PREGUNTAS FRECUENTES FAQ COMPLETA CON "VER MÁS" -->
   <section class="faq-section">
     <h2 class="faq-title">Preguntas frecuentes</h2>
+
     <div class="faq-container">
+      <!-- PREGUNTA 1 -->
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Qué es Seguros de las Américas y cómo funciona?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Seguros de las Américas es una agencia profesional especializada en comparar, gestionar y asesorar la compra de pólizas de auto, vida, salud y empresas entre más de 12 aseguradoras líderes en Colombia sin costos adicionales.
+          Seguros de las Américas es una agencia profesional de seguros especializada en comparar, gestionar y asesorar la compra de pólizas de auto, vida, salud y empresas entre más de 12 aseguradoras líderes en Colombia. Nos encargamos de encontrar la mejor opción para ti sin costos adicionales.
         </div>
       </div>
 
+      <!-- PREGUNTA 2 -->
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Es gratis cotizar en Seguros de las Américas?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Sí, el servicio de cotización y asesoría es 100% gratuito. No cobramos ninguna comisión ni tarifa extra por realizar estudios comparativos.
+          Sí, el servicio de cotización y asesoría es 100% gratuito. No cobramos ninguna comisión ni tarifa extra por realizar estudios comparativos o guiarte en la elección de tu seguro.
         </div>
       </div>
 
+      <!-- PREGUNTA 3 -->
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>¿Qué tipos de seguros puedo cotizar con ustedes?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Puedes cotizar seguros todo riesgo para autos y motos, planes de medicina prepagada y salud, seguros de vida e incapacidad, pólizas estudiantiles, responsabilidad civil y soluciones de protección patrimonial para empresas.
+        </div>
+      </div>
+
+      <!-- PREGUNTA 4 -->
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>¿Cómo comparo precios de seguros con sus asesores?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Solo debes seleccionar la categoría de seguro que necesitas, ingresar tus datos en nuestro cotizador rápido y uno de nuestros expertos analizará en tiempo real las mejores ofertas del mercado para enviártelas directamente por WhatsApp o correo.
+        </div>
+      </div>
+
+      <!-- PREGUNTA 5 -->
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Puedo financiar mi seguro a cuotas?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          ¡Claro que sí! Contamos con opciones de financiamiento ágil que te permiten diferir el pago de tu seguro en cuotas mensuales.
+          ¡Claro que sí! Contamos con opciones de financiamiento ágil que te permiten diferir el pago de tu seguro en cuotas mensuales, sujetas a los beneficios de cada aseguradora aliada.
+        </div>
+      </div>
+
+      <!-- PREGUNTAS ADICIONALES (OCULTAS POR DEFECTO) -->
+      <div class="faq-extra" id="faq-extra-block">
+        <!-- PREGUNTA 6 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Me ayudan en caso de tener un siniestro o reclamación?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Por supuesto. A diferencia de un cotizador automático tradicional, nuestro equipo de asesores te acompaña personalmente durante todo el proceso de reclamación y radicación de documentos ante la aseguradora.
+          </div>
+        </div>
+
+        <!-- PREGUNTA 7 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>¿Tienen convenios o descuentos especiales con CampusLA?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Sí, mediante nuestra alianza estratégica con CampusLA (Campus Latinoamérica), los estudiantes, docentes y egresados acceden a asesoría prioritaria y tarifas preferenciales en seguros de salud y accidentes.
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- BOTÓN VER MÁS / VER MENOS -->
+    <button class="btn-see-more" id="btn-toggle-more" onclick="toggleMoreFaqs()">
+      <span id="text-more">Ver más</span>
+    </button>
   </section>
 
   <!-- BANNER CAMPUSLA -->
@@ -773,6 +982,19 @@
         if (item !== currentItem) item.classList.remove('active');
       });
       currentItem.classList.toggle('active');
+    }
+
+    function toggleMoreFaqs() {
+      const extraBlock = document.getElementById('faq-extra-block');
+      const textMore = document.getElementById('text-more');
+
+      if (extraBlock.classList.contains('show')) {
+        extraBlock.classList.remove('show');
+        textMore.innerText = 'Ver más';
+      } else {
+        extraBlock.classList.add('show');
+        textMore.innerText = 'Ver menos';
+      }
     }
 
     window.onclick = function(event) {
