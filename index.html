@@ -1889,66 +1889,126 @@
       }
     }
   </script>
-  <!-- PÉGALO AL FINAL DE TU ARCHIVO (DESPUÉS DE </script>) -->
-<style>
+ <style>
+  /* ===================================================
+     AJUSTES RESPONSIVE TOTALES PARA MÓVILES (MEDIAS QUERIES)
+     =================================================== */
   @media (max-width: 768px) {
+    /* 1. Ajuste General */
     body {
-      padding: 20px 12px !important;
+      padding: 15px 10px !important;
     }
 
+    /* 2. Hero principal y cotizador */
     .custom-hero {
-      padding: 30px 18px !important;
+      padding: 25px 15px !important;
       border-radius: 16px !important;
     }
-
     .hero-layout {
       grid-template-columns: 1fr !important;
-      gap: 25px !important;
+      gap: 20px !important;
     }
-
     .hero-main-title {
-      font-size: 1.8rem !important;
+      font-size: 1.7rem !important;
       text-align: center;
     }
-
     .hero-subtitle {
-      font-size: 0.95rem !important;
+      font-size: 0.9rem !important;
+      text-align: center;
+    }
+    .quote-box {
+      padding: 15px 12px !important;
+    }
+    .quote-tabs {
+      flex-wrap: wrap !important;
+      gap: 5px !important;
+    }
+    .tab-btn {
+      font-size: 0.75rem !important;
+      padding: 8px 6px !important;
+      flex: 1 1 40% !important;
       text-align: center;
     }
 
-    .social-proof-badge {
-      width: 100%;
-      justify-content: center;
-    }
-
-    .quote-box {
-      padding: 20px 15px !important;
-    }
-
-    .quote-tabs {
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      font-size: 0.78rem !important;
-      padding: 8px 5px !important;
-    }
-
+    /* 3. Rejillas de Cursos, Aliados y Noticias */
     .partners-grid,
     .value-grid,
     .courses-grid,
     .articles-grid {
       grid-template-columns: 1fr !important;
-      gap: 16px !important;
+      gap: 18px !important;
     }
 
+    /* 4. Sección Newsroom / Noticias Tech */
+    .newsroom-hero {
+      grid-template-columns: 1fr !important;
+      padding: 25px 18px !important;
+      text-align: center !important;
+    }
+    .newsroom-title {
+      font-size: 1.8rem !important;
+    }
+    .mascot-wrapper {
+      margin-top: 15px;
+    }
+    .mascot-svg {
+      width: 150px !important;
+    }
+    .mascot-bg-circle {
+      width: 150px !important;
+      height: 150px !important;
+    }
+
+    /* 5. Banners de Escuela / Moodle / Capacitaciones */
+    .corporate-training-banner,
+    .moodle-banner {
+      flex-direction: column !important;
+      padding: 25px 18px !important;
+      text-align: center !important;
+      gap: 20px !important;
+    }
+    .moodle-info h3,
+    .corporate-info h3 {
+      font-size: 1.3rem !important;
+    }
+    .btn-moodle-direct,
+    .btn-corporate {
+      width: 100% !important;
+      text-align: center;
+      white-space: normal !important;
+    }
+
+    /* 6. Banner Arriba del Footer / Canales de Atención */
+    .footer-cta-banner,
+    .cta-banner,
+    footer,
+    .footer-container {
+      flex-direction: column !important;
+      padding: 25px 15px !important;
+      text-align: center !important;
+      gap: 20px !important;
+    }
+    .footer-buttons,
+    .footer-channels {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      gap: 10px !important;
+    }
+    .footer-buttons a,
+    .footer-buttons button,
+    .footer-channels a {
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 7. FAQ Preguntas Frecuentes */
     .faq-question {
-      padding: 16px 18px !important;
-      font-size: 0.95rem !important;
+      padding: 14px 15px !important;
+      font-size: 0.9rem !important;
     }
-
     .faq-answer {
-      font-size: 0.88rem !important;
+      font-size: 0.85rem !important;
     }
   }
 </style>
