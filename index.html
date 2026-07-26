@@ -315,17 +315,49 @@
     .wa-float-btn { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: #ffffff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 9999; cursor: pointer; transition: transform 0.3s ease; text-decoration: none; }
     .wa-float-btn:hover { transform: scale(1.08); }
 
-    /* REGLAS RESPONSIVE TOTALES PARA MÓVILES */
+    /* ========================================================= */
+    /* REGLAS RESPONSIVE UNIFICADAS Y FIX DE FORMULARIOS MÓVILES */
+    /* ========================================================= */
+    
+    /* REGLA GLOBAL ANTI-DESBORDE PARA CAMPOS DE TEXTO */
+    .form-card-container,
+    .b2b-card-container,
+    .inputs-grid,
+    .b2b-grid,
+    .field-group,
+    .b2b-group {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .field-group input, 
+    .field-group select,
+    .b2b-group input, 
+    .b2b-group select {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin: 0 !important;
+      display: block !important;
+    }
+
     @media (max-width: 1024px) {
       .quick-quote-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 820px) {
-      .b2b-layout-grid { grid-template-columns: 1fr !important; padding: 25px 20px !important; }
-      .b2b-gadget-side { display: flex; align-items: center; gap: 15px; text-align: left; padding: 15px 20px; }
-      .robot-gadget-svg { width: 70px; margin-bottom: 0; }
+
+    @media (max-width: 850px) {
+      .b2b-wrapper-section { padding: 0 15px !important; margin-bottom: 35px !important; }
+      .b2b-layout-grid { grid-template-columns: 1fr !important; gap: 20px !important; padding: 25px 20px !important; border-radius: 18px !important; }
+      .b2b-gadget-side { display: flex !important; align-items: center !important; text-align: left !important; gap: 15px !important; padding: 15px 18px !important; }
+      .robot-gadget-svg { width: 65px !important; height: auto !important; margin-bottom: 0 !important; }
+      .robot-gadget-title { font-size: 1.05rem !important; }
+      .robot-gadget-desc { font-size: 0.8rem !important; }
+      .b2b-card-container { max-width: 100% !important; }
     }
+
     @media (max-width: 768px) {
-      body { padding: 0 !important; }
+      body { padding: 0 !important; overflow-x: hidden !important; }
       .top-bar { text-align: center; justify-content: center; font-size: 0.75rem; }
       .nav-container { flex-direction: column; gap: 15px; text-align: center; }
       nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
@@ -346,6 +378,7 @@
       .quote-tabs { flex-wrap: wrap; gap: 5px; }
       .tab-btn { font-size: 0.75rem; padding: 8px 4px; flex: 1 1 40%; }
 
+      /* COLAPSO DE GRILLAS Y CAMPOS A 1 COLUMNA */
       .quick-quote-grid,
       .value-grid,
       .partners-grid,
@@ -356,61 +389,39 @@
         padding: 0 15px !important;
       }
 
-      .inputs-grid, .b2b-grid { grid-template-columns: 1fr !important; }
-      .input-full, .b2b-full { grid-column: span 1 !important; }
-      .summary-card, .checkout-option-card { flex-direction: column; text-align: center; }
+      .inputs-grid, .b2b-grid { 
+        grid-template-columns: 1fr !important; 
+        gap: 12px !important;
+      }
 
+      .input-full, .b2b-full { 
+        grid-column: 1 / -1 !important; 
+      }
+
+      .form-card-container {
+        padding: 20px 15px !important;
+      }
+
+      .summary-card, .checkout-option-card { flex-direction: column; text-align: center; }
       .newsroom-hero { grid-template-columns: 1fr !important; text-align: center; padding: 20px 15px !important; }
       .newsroom-title { font-size: 1.6rem !important; }
-
       .campusla-integration { flex-direction: column; text-align: center; padding: 25px 15px !important; }
       .btn-campusla { width: 100%; }
     }
- /* PARCHE RESPONSIVE Y FIX DE ALINEACIÓN PERFECTA FORMULARIO B2B */
-  #registro-b2b,
-  .b2b-wrapper-section,
-  .b2b-layout-grid,
-  .b2b-card-container,
-  .b2b-grid,
-  .b2b-group,
-  .b2b-full {
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
 
-  .b2b-full {
-    grid-column: 1 / -1 !important;
-  }
-
-  .b2b-group input, 
-  .b2b-group select {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
-    display: block !important;
-  }
-
-  @media (max-width: 850px) {
-    .b2b-wrapper-section { padding: 0 15px !important; margin-bottom: 35px !important; }
-    .b2b-layout-grid { grid-template-columns: 1fr !important; gap: 20px !important; padding: 25px 20px !important; border-radius: 18px !important; }
-    .b2b-gadget-side { display: flex !important; align-items: center !important; text-align: left !important; gap: 15px !important; padding: 15px 18px !important; }
-    .robot-gadget-svg { width: 65px !important; height: auto !important; margin-bottom: 0 !important; }
-    .robot-gadget-title { font-size: 1.05rem !important; }
-    .robot-gadget-desc { font-size: 0.8rem !important; }
-    .b2b-card-container { max-width: 100% !important; }
-  }
-
-  @media (max-width: 540px) {
-    .b2b-header h2 { font-size: 1.35rem !important; }
-    .b2b-header p { font-size: 0.82rem !important; }
-    .b2b-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
-    .b2b-full { grid-column: 1 / -1 !important; }
-    .b2b-group label { font-size: 0.72rem !important; }
-    .b2b-group input, .b2b-group select { padding: 11px 12px !important; font-size: 0.88rem !important; border-radius: 8px !important; }
-    .b2b-legal { padding: 10px 12px !important; font-size: 0.72rem !important; gap: 8px !important; }
-    .btn-b2b-submit { padding: 13px !important; font-size: 0.92rem !important; }
-  }
+    @media (max-width: 540px) {
+      .b2b-header h2 { font-size: 1.35rem !important; }
+      .b2b-header p { font-size: 0.82rem !important; }
+      .b2b-group label, .field-group label { font-size: 0.72rem !important; }
+      .b2b-group input, .b2b-group select,
+      .field-group input, .field-group select { 
+        padding: 11px 12px !important; 
+        font-size: 0.88rem !important; 
+        border-radius: 8px !important; 
+      }
+      .b2b-legal, .checkbox-legal { padding: 10px 12px !important; font-size: 0.72rem !important; gap: 8px !important; }
+      .btn-b2b-submit, .btn-submit-action { padding: 13px !important; font-size: 0.92rem !important; }
+    }
   </style>
 </head>
 <body>
