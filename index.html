@@ -366,8 +366,31 @@
       .campusla-integration { flex-direction: column; text-align: center; padding: 25px 15px !important; }
       .btn-campusla { width: 100%; }
     }
-    /* PARCHE RESPONSIVE FORMULARIO B2B */
-  #registro-b2b { width: 100% !important; box-sizing: border-box !important; }
+   /* PARCHE RESPONSIVE Y FIX DE ALINEACIÓN PERFECTA FORMULARIO B2B */
+  #registro-b2b,
+  .b2b-wrapper-section,
+  .b2b-layout-grid,
+  .b2b-card-container,
+  .b2b-grid,
+  .b2b-group,
+  .b2b-full {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .b2b-full {
+    grid-column: 1 / -1 !important;
+  }
+
+  .b2b-group input, 
+  .b2b-group select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
   @media (max-width: 850px) {
     .b2b-wrapper-section { padding: 0 15px !important; margin-bottom: 35px !important; }
     .b2b-layout-grid { grid-template-columns: 1fr !important; gap: 20px !important; padding: 25px 20px !important; border-radius: 18px !important; }
@@ -377,15 +400,17 @@
     .robot-gadget-desc { font-size: 0.8rem !important; }
     .b2b-card-container { max-width: 100% !important; }
   }
+
   @media (max-width: 540px) {
     .b2b-header h2 { font-size: 1.35rem !important; }
     .b2b-header p { font-size: 0.82rem !important; }
     .b2b-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
-    .b2b-full { grid-column: span 1 !important; }
+    .b2b-full { grid-column: 1 / -1 !important; }
     .b2b-group label { font-size: 0.72rem !important; }
-    .b2b-group input, .b2b-group select { width: 100% !important; padding: 11px 12px !important; font-size: 0.88rem !important; border-radius: 8px !important; }
+    .b2b-group input, .b2b-group select { padding: 11px 12px !important; font-size: 0.88rem !important; border-radius: 8px !important; }
     .b2b-legal { padding: 10px 12px !important; font-size: 0.72rem !important; gap: 8px !important; }
     .btn-b2b-submit { padding: 13px !important; font-size: 0.92rem !important; }
+  }
   }
   </style>
 </head>
