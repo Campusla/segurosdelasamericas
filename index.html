@@ -414,38 +414,595 @@
       </div>
 
     </div>
-  </section>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguros de las Américas | Cotizador Inteligente</title>
 
-  <!-- CARDS DE COTIZACIÓN RÁPIDA -->
+  <!-- ESTILOS UNIFICADOS -->
+  <style>
+    :root {
+      --primary-navy: #002147;
+      --primary-cyan: #00A8E8;
+      --brand-orange: #FF6B35;
+      --dark-text: #0f172a;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --text-muted: #64748b;
+      --hover-bg: #f1f5f9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+      background-color: var(--light-bg); 
+      color: var(--dark-text); 
+      line-height: 1.5; 
+      overflow-x: hidden; 
+    }
+
+    /* GRILLA DE 8 TARJETAS SIMÉTRICAS (4X2) */
+    .quick-quote-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+      max-width: 1250px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .quote-card {
+      background: #ffffff;
+      padding: 28px 20px 22px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      text-align: center;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(0, 168, 232, 0.14);
+      border-color: var(--primary-cyan);
+    }
+
+    .quote-card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    .quote-icon {
+      width: 58px;
+      height: 58px;
+      background: rgba(0, 168, 232, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: var(--primary-cyan);
+    }
+
+    .quote-title {
+      font-size: 1.12rem;
+      font-weight: 900;
+      color: var(--primary-navy);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .quote-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .btn-quote {
+      width: 100%;
+      background: var(--primary-navy);
+      color: #ffffff;
+      border: none;
+      padding: 12px 10px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-quote:hover {
+      background: var(--primary-cyan);
+    }
+
+    /* ESTILOS FAQS ACORDEÓN DESPLEGABLE */
+    .faq-accordion-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .faq-accordion-item.active {
+      border-color: var(--primary-cyan);
+      box-shadow: 0 4px 15px rgba(0, 168, 232, 0.08);
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-question-btn:hover {
+      background: var(--hover-bg);
+      color: var(--primary-cyan);
+    }
+
+    .faq-toggle-icon {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      transition: transform 0.3s ease;
+      margin-left: 15px;
+    }
+
+    .faq-accordion-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+      color: var(--primary-cyan);
+    }
+
+    .faq-answer-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+      padding: 0 20px;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .faq-accordion-item.active .faq-answer-content {
+      max-height: 300px;
+      padding: 0 20px 18px 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .quick-quote-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .quick-quote-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GRILLA DE LAS 8 TARJETAS DE SEGUROS -->
   <div class="quick-quote-grid" id="productos">
+
+    <!-- 1. AUTOS -->
     <div class="quote-card">
-      <div class="quote-icon">🏥</div>
-      <div class="quote-title">Seguros de Salud</div>
-      <div class="quote-desc">Medicina prepagada, pólizas de salud y cobertura de urgencias familiares.</div>
-      <button class="btn-quote" onclick="openQuoteModal('Seguro de Salud')">Cotizar Salud →</button>
+      <div class="quote-card-content">
+        <div class="quote-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4h14v4z"/><circle cx="7.5" cy="14.5" r="1.5"/><circle cx="16.5" cy="14.5" r="1.5"/></svg>
+        </div>
+        <h3 class="quote-title">Seguro de Autos</h3>
+        <p class="quote-desc">Protección Todo Riesgo, daños a terceros, pérdida parcial/total y asistencias 24/7.</p>
+      </div>
+      <button class="btn-quote" onclick="openProductDetail('auto')">Cotizar Seguro de Auto →</button>
     </div>
 
+    <!-- 2. MOTOS -->
     <div class="quote-card">
-      <div class="quote-icon">🛡️</div>
-      <div class="quote-title">Seguros de Vida</div>
-      <div class="quote-desc">Protección financiera familiar, accidentes personales y libre inversión.</div>
-      <button class="btn-quote" onclick="openQuoteModal('Seguro de Vida')">Cotizar Vida →</button>
+      <div class="quote-card-content">
+        <div class="quote-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="16" r="3"/><circle cx="19" cy="16" r="3"/><path d="M12 16h3l3-6h-3l-2-3H9l-1 3H5"/><path d="M12 8V5h3"/></svg>
+        </div>
+        <h3 class="quote-title">Seguro de Motos</h3>
+        <p class="quote-desc">Cobertura especializada por hurto, accidentes, repuestos y responsabilidad civil.</p>
+      </div>
+      <button class="btn-quote" onclick="openProductDetail('moto')">Cotizar Seguro de Moto →</button>
     </div>
 
+    <!-- 3. SALUD -->
     <div class="quote-card">
-      <div class="quote-icon">🚗</div>
-      <div class="quote-title">Vehículos & Todo Riesgo</div>
-      <div class="quote-desc">Protección integral para autos, motos y responsabilidad civil extracontractual.</div>
-      <button class="btn-quote" onclick="openQuoteModal('Seguro de Autos')">Cotizar Vehículo →</button>
+      <div class="quote-card-content">
+        <div class="quote-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/><path d="M12 7v6M9 10h6"/></svg>
+        </div>
+        <h3 class="quote-title">Planes de Salud</h3>
+        <p class="quote-desc">Medicina prepagada, acceso directo a especialistas y clínicas de primer nivel.</p>
+      </div>
+      <button class="btn-quote" onclick="openProductDetail('salud')">Cotizar Planes de Salud →</button>
     </div>
 
+    <!-- 4. VIDA -->
     <div class="quote-card">
-      <div class="quote-icon">🎓</div>
-      <div class="quote-title">Seguros Estudiantiles / Viajes</div>
-      <div class="quote-desc">Cobertura académica, accidentes universitarios y asistencia internacional.</div>
-      <button class="btn-quote" onclick="openQuoteModal('Seguro Estudiantil / Viajes')">Cotizar Estudiantil →</button>
+      <div class="quote-card-content">
+        <div class="quote-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="quote-title">Seguros de Vida</h3>
+        <p class="quote-desc">Respaldo financiero familiar de libre inversión por invalidez o fallecimiento.</p>
+      </div>
+      <button class="btn-quote" onclick="openProductDetail('vida')">Cotizar Seguro de Vida →</button>
     </div>
+
+    <!-- 5. ESTUDIANTIL / VIAJES -->
+    <div class="quote-card">
+      <div class="quote-card-content">
+        <div class="quote-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 6 2 6 2s6 0 6-2v-5"/></svg>
+        </div>
+        <h3 class="quote-title">Estudiantil / Viajes</h3>
+        <p class="quote-desc">Cobertura académica, accidentes universitarios y asistencia médica internacional.</p>
+      </div>
+      <button class="btn-quote" onclick="openProductDetail('estudiantil')">Cotizar Estudiantil / Viajes →</button>
+    </div>
+
+    <!-- 6. PYME & EMPRESAS -->
+    <div class="quote-card">
+      <div class="quote-card-content">
+        <div class="quote-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2"/></svg>
+        </div>
+        <h3 class="quote-title">Seguros Pyme & Empresas</h3>
+        <p class="quote-desc">Protección para tu negocio contra todo riesgo, daño material y responsabilidad civil.</p>
+      </div>
+      <button class="btn-quote" onclick="openProductDetail('pyme')">Cotizar Seguro Pyme →</button>
+    </div>
+
+    <!-- 7. HOGAR -->
+    <div class="quote-card">
+      <div class="quote-card-content">
+        <div class="quote-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="quote-title">Seguro de Hogar</h3>
+        <p class="quote-desc">Protección para tu vivienda y contenidos contra terremoto, hurto e incendio.</p>
+      </div>
+      <button class="btn-quote" onclick="openProductDetail('hogar')">Cotizar Seguro de Hogar →</button>
+    </div>
+
+    <!-- 8. ARRENDAMIENTO & PÓLIZAS -->
+    <div class="quote-card">
+      <div class="quote-card-content">
+        <div class="quote-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-2-2l2 2M3 11l9-9 9 9v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="2"/></svg>
+        </div>
+        <h3 class="quote-title">Arrendamiento & Pólizas</h3>
+        <p class="quote-desc">Garantía de pago de cánones de arrendamiento, administración y servicios públicos.</p>
+      </div>
+      <button class="btn-quote" onclick="openProductDetail('arrendamiento')">Cotizar Arrendamiento →</button>
+    </div>
+
   </div>
+
+  <!-- SECCIÓN DESPLEGABLE CON VALIDADOR + EXPLICACIÓN + FAQS -->
+  <div id="section-validador-detalle" style="display: none; max-width: 1100px; margin: 40px auto; padding: 0 20px;">
+    
+    <button onclick="cerrarValidador()" style="background:#002147; color:#fff; border:none; padding:10px 20px; border-radius:30px; font-weight:bold; cursor:pointer; margin-bottom:25px;">← Volver a todos los seguros</button>
+
+    <!-- VALIDADOR / COTIZADOR -->
+    <div style="background:#ffffff; border-radius:20px; padding:35px; border:1px solid #e2e8f0; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-align:center; margin-bottom:30px;">
+      <h2 id="val-titulo" style="color:#002147; font-size:2rem; font-weight:900; margin-bottom:10px;">Cotiza tu Seguro</h2>
+      <p id="val-subtitulo" style="color:#64748b; margin-bottom:25px;">Compara en tiempo real con más de 12 aseguradoras en Colombia.</p>
+      
+      <form onsubmit="procesarCotizacion(event)" style="max-width:450px; margin:0 auto;">
+        <label id="val-label" style="display:block; font-size:0.85rem; font-weight:bold; color:#64748b; text-transform:uppercase; margin-bottom:8px;">Ingresa la Placa</label>
+        <input type="text" id="val-input" placeholder="ABC-123" required style="width:100%; padding:15px; font-size:1.3rem; font-weight:900; text-align:center; border:2px solid #e2e8f0; border-radius:12px; margin-bottom:18px; outline:none;">
+        <button type="submit" style="width:100%; background:#FF6B35; color:#fff; border:none; padding:16px; border-radius:12px; font-weight:900; font-size:1.05rem; cursor:pointer;">Ver mejores opciones ahora →</button>
+      </form>
+    </div>
+
+    <!-- EXPLICACIÓN: POR QUÉ COMPRAR -->
+    <div style="background:#ffffff; border-radius:20px; padding:35px; border:1px solid #e2e8f0; margin-bottom:30px;">
+      <h3 id="exp-titulo" style="color:#002147; font-size:1.6rem; font-weight:800; margin-bottom:12px;">¿Por qué es importante contratar este seguro?</h3>
+      <p id="exp-texto" style="color:#64748b; line-height:1.6; margin-bottom:20px;">Protege tu patrimonio y tranquilidad frente a eventos imprevistos en Colombia con coberturas integrales.</p>
+      <ul id="exp-lista" style="list-style:none; display:flex; flex-direction:column; gap:10px; color:#0f172a; font-weight:600;">
+        <!-- Beneficios cargados dinámicamente -->
+      </ul>
+    </div>
+
+    <!-- FAQS DESPLEGABLES DEL PRODUCTO SELECCIONADO (6 FAQS) -->
+    <div style="background:#ffffff; border-radius:20px; padding:35px; border:1px solid #e2e8f0;">
+      <h3 id="faq-titulo" style="color:#002147; font-size:1.6rem; font-weight:800; margin-bottom:20px;">Preguntas Frecuentes</h3>
+      <div id="faq-contenedor" style="display:flex; flex-direction:column; gap:12px;">
+        <!-- FAQs inyectadas por JS -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCRIPT CON LA LÓGICA DE INTERACCIÓN Y DATOS (6 FAQS POR PRODUCTO) -->
+  <script>
+    const datosSeguros = {
+      auto: {
+        titulo: "Cotiza tu Seguro de Auto Todo Riesgo",
+        subtitulo: "Compara precios y coberturas entre más de 12 aseguradoras líderes en Colombia.",
+        label: "Ingresa la Placa de tu Vehículo",
+        placeholder: "ABC-123",
+        expTitulo: "¿Por qué contratar Seguro de Auto?",
+        expTexto: "El SOAT solo cubre gastos médicos de lesionados. El seguro voluntario Todo Riesgo protege el valor comercial de tu auto por hurto, choques y pérdidas patrimoniales a terceros.",
+        beneficios: [
+          "✓ Cobertura por pérdida parcial o total por hurto o accidente.",
+          "✓ Responsabilidad Civil Extracontractual ante daños a terceros.",
+          "✓ Asistencia en carretera 24/7: Grúa, carro taller, cerrajería y conductor elegido.",
+          "✓ Vehículo de reemplazo durante el tiempo de reparación en taller.",
+          "✓ Asesoría y acompañamiento jurídico inmediato en el lugar del siniestro."
+        ],
+        faqs: [
+          { q: "¿Necesito un seguro todo riesgo si ya tengo el SOAT?", a: "Sí. El SOAT es obligatorio y solo cubre atención médica de personas lesionadas. El seguro todo riesgo paga los repuestos, arreglos de tu auto o el valor comercial completo si te lo roban." },
+          { q: "¿Cuánto cuesta un seguro voluntario de auto en Colombia?", a: "El costo varía según el modelo, año y ciudad. Contamos con opciones desde $1.200.000 COP anuales que puedes diferir en cuotas mensuales." },
+          { q: "¿El seguro de auto cubre si le presto el vehículo a un familiar?", a: "Sí, la gran mayoría de pólizas cubren el siniestro siempre y cuando el conductor tenga licencia vigente y no esté bajo efectos del alcohol." },
+          { q: "¿Qué debo hacer inmediatamente después de tener un accidente?", a: "Debes reportar el choque de inmediato a la línea de asistencia de tu aseguradora sin mover el vehículo hasta que el analista o la policía de tránsito te indiquen." },
+          { q: "¿Qué significa el deducible en un seguro de auto?", a: "Es la suma fija o porcentaje negociado que debes aportar al momento de hacer efectiva la reparación de tu vehículo tras un accidente." },
+          { q: "¿Puedo financiar el valor total de mi póliza?", a: "¡Claro que sí! Ofrecemos pago financiado desde 2 hasta 12 cuotas mensuales con débito automático o tarjeta." }
+        ]
+      },
+      moto: {
+        titulo: "Cotiza tu Seguro para Moto",
+        subtitulo: "Protégete ante hurtos y accidentes con planes diseñados para motociclistas.",
+        label: "Ingresa la Placa de tu Moto",
+        placeholder: "XYZ-12A",
+        expTitulo: "¿Por qué asegurar tu Moto?",
+        expTexto: "Las motos representan más del 60% de la movilidad en Colombia y están expuestas a altos índices de hurto e incapacidad que el SOAT no resarce.",
+        beneficios: [
+          "✓ Cobertura por hurto calificado y pérdida total por daños.",
+          "✓ Responsabilidad Civil Extracontractual en la vía pública.",
+          "✓ Asistencia de remolque en grúa nacional y transporte en taller.",
+          "✓ Amparo de gastos médicos complementarios a los del SOAT.",
+          "✓ Acompañamiento legal ante la fiscalía en accidentes con lesionados."
+        ],
+        faqs: [
+          { q: "¿El seguro de moto cubre si me la roban parqueada en la calle?", a: "Sí, la cobertura de hurto calificado te indemniza por el valor comercial asignado tanto en parqueaderos como en vía pública." },
+          { q: "¿Aseguran motos de bajo y alto cilindraje?", a: "Cotizamos desde motocicletas de 100cc hasta motos de alto cilindraje y turismo con tarifas ajustadas." },
+          { q: "¿Qué diferencia hay entre pérdida parcial y pérdida total?", a: "Pérdida parcial aplica cuando el costo de reparación no supera el 75% del valor de la moto. Si lo supera, se declara pérdida total e indemnizan el valor comercial." },
+          { q: "¿El seguro de moto cubre la grúa si me quedo varado por fallas mecánicas?", a: "Sí, dispones de asistencias de grúa y carro taller las 24 horas a nivel nacional." },
+          { q: "¿Puedo asegurar una moto nueva sin matricular?", a: "Se cotiza inicialmente con la factura de compra y número de chasis, y se activa definitivamente al asignar la placa." },
+          { q: "¿Qué aseguradoras emiten pólizas de moto en Colombia?", a: "Comparamos en tiempo real con Seguros SURA, AXA Colpatria, Mapfre, SBS y Seguros Bolívar." }
+        ]
+      },
+      salud: {
+        titulo: "Cotiza tu Plan de Medicina Prepagada",
+        subtitulo: "Acceso directo a especialistas y clínicas privadas sin filas ni autorizaciones.",
+        label: "Ingresa tu Número de Celular / WhatsApp",
+        placeholder: "311 234 5678",
+        expTitulo: "¿Por qué contratar Medicina Prepagada?",
+        expTexto: "Garantiza atención médica de alta calidad, habitación individual en hospitalización y consultas directas con especialistas sin pasar por médico general.",
+        beneficios: [
+          "✓ Consultas directas con especialistas (pediatría, ginecología, cardiología, etc.).",
+          "✓ Hospitalización en habitación individual en las mejores clínicas del país.",
+          "✓ Urgencias médicas domiciliarias las 24 horas del día.",
+          "✓ Cobertura de maternidad y amparo al recién nacido desde el primer día.",
+          "✓ Exámenes diagnósticos de alta tecnología sin autorizaciones demoradas."
+        ],
+        faqs: [
+          { q: "¿Qué diferencia hay entre la EPS y la Medicina Prepagada?", a: "La EPS es el sistema básico obligatorio. La Medicina Prepagada es un servicio privado voluntario que brinda atención prioritaria, sin filas y en clínicas de primer nivel." },
+          { q: "¿Puedo afiliar a mis padres o a mis hijos en la misma póliza?", a: "Sí, puedes armar un plan familiar colectivo beneficiándote de tarifas grupales con descuento." },
+          { q: "¿Existen periodos de carencia al ingresar?", a: "Las urgencias médicas quedan cubiertas de inmediato. Ciertas cirugías programadas o partos requieren un tiempo mínimo de antigüedad en la póliza." },
+          { q: "¿La medicina prepagada cubre exámenes de alta tecnología?", a: "Sí, incluye tomografías, resonancias y procedimientos de diagnóstico avanzado con acceso rápido." },
+          { q: "¿Qué clínicas están disponibles en el convenio?", a: "Tendrás acceso a redes como la Clínica Country, Marly, Foscal, Imbanaco y las mejores instituciones del país." },
+          { q: "¿Tengo cobertura internacional si viajo por vacaciones?", a: "Muchos de nuestros planes incluyen asistencia médica de emergencia internacional sin costo adicional." }
+        ]
+      },
+      vida: {
+        titulo: "Cotiza tu Seguro de Vida Familiar",
+        subtitulo: "Respaldo económico de libre destinación para garantizar el futuro de tus seres queridos.",
+        label: "Ingresa tu Celular o Cédula",
+        placeholder: "311 234 5678",
+        expTitulo: "¿Por qué es clave un Seguro de Vida?",
+        expTexto: "Un seguro de vida no es un gasto, es la garantía de que tu familia mantendrá su nivel de vida y pagará deudas o matrículas si llegas a faltar o sufres invalidez.",
+        beneficios: [
+          "✓ Capital inembargable de libre destinación entregado a tus beneficiarios.",
+          "✓ Indemnización por Incapacidad Total y Permanente por enfermedad o accidente.",
+          "✓ Anticipo de suma asegurada en vida por diagnóstico de enfermedades graves.",
+          "✓ Saneamiento directo de créditos hipotecarios y deudas bancarias.",
+          "✓ Auxilio para gastos funerarios e indemnización adicional por accidente."
+        ],
+        faqs: [
+          { q: "¿El dinero del seguro de vida entra en juicio de sucesión?", a: "No, el dinero de un seguro de vida es inembargable y se entrega directamente a los beneficiarios designados en pocos días." },
+          { q: "¿Quiénes pueden ser mis beneficiarios?", a: "Tú decides libremente a quiénes asignar (cónyuge, hijos, padres, hermanos) y en qué porcentajes repartir el capital." },
+          { q: "¿Puedo contratar un seguro de vida si tengo alguna enfermedad previa?", a: "Se realiza una declaración de salud digital. Según el diagnóstico, la aseguradora aprueba la póliza estándar o con condiciones especiales." },
+          { q: "¿Hasta qué edad puedo contratar una póliza de vida?", a: "Normalmente la edad límite de ingreso es entre los 60 y 65 años, permitiendo permanencia en muchos casos hasta los 80 años." },
+          { q: "¿Qué sucede con las deudas que tengo en los bancos si fallezco?", a: "El capital del seguro salda las deudas bancarias respaldadas o le otorga la liquidez a tu familia para cancelarlas." },
+          { q: "¿Puedo modificar mis beneficiarios más adelante?", a: "Sí, puedes actualizar la lista de beneficiarios y porcentajes en cualquier momento notificando a la agencia." }
+        ]
+      },
+      estudiantil: {
+        titulo: "Cotiza tu Seguro Estudiantil / Viajes",
+        subtitulo: "Protección médica integral para estudiantes, universitarios y asistencia en viajes internacionales.",
+        label: "Ingresa tu Celular o WhatsApp",
+        placeholder: "311 234 5678",
+        expTitulo: "¿Por qué contratar Seguro Estudiantil?",
+        expTexto: "Ofrece respaldo completo por accidentes en actividades académicas, prácticas profesionales, laboratorios y salidas de campo en Colombia o el exterior.",
+        beneficios: [
+          "✓ Cobertura por accidentes personales dentro y fuera del campus universitario.",
+          "✓ Asistencia médica internacional con montos mínimos exigidos por embajadas.",
+          "✓ Renta educacional que garantiza el pago de matrícula ante invalidez o fallecimiento del acudiente.",
+          "✓ Expedición de certificación oficial válida para prácticas profesionales y pasantías.",
+          "✓ Descuentos especiales para la comunidad de estudiantes y egresados de CampusLA."
+        ],
+        faqs: [
+          { q: "¿Sirve este seguro para trámites de matrícula o prácticas universitarias?", a: "Sí, emitimos la certificación oficial requerida por instituciones educativas y colegios en Colombia." },
+          { q: "¿Qué cubre la asistencia internacional de viajes para estudiantes?", a: "Cubre consultas médicas por enfermedad repentina, accidentes, medicamentos, repatriación y pérdidas de equipaje." },
+          { q: "¿Aplica si viajo por intercambio académico o beca al exterior?", a: "Sí, tenemos coberturas adaptadas a la zona Schengen de Europa, Estados Unidos, Canadá y Latinoamérica." },
+          { q: "¿El seguro cubre accidentes durante la práctica de deportes universitarios?", a: "Sí, cubre urgencias médicas y hospitalarias por accidentes durante torneos y prácticas deportivas." },
+          { q: "¿Qué es la cobertura de renta educacional?", a: "Garantiza el pago de las matrículas restantes para que el estudiante termine sus estudios si el acudiente llega a faltar." },
+          { q: "¿Cuánto tarda la entrega de la certificación digital?", a: "Se genera y envía en formato PDF a tu correo y WhatsApp en menos de 15 minutos tras la validación." }
+        ]
+      },
+      pyme: {
+        titulo: "Cotiza el Seguro para tu Empresa / Pyme",
+        subtitulo: "Protege las instalaciones, inventarios, maquinaria y patrimonio de tu negocio.",
+        label: "Ingresa tu Celular o NIT",
+        placeholder: "311 234 5678",
+        expTitulo: "¿Por qué asegurar tu Negocio?",
+        expTexto: "Un incendio, inundación o robo puede destruir el capital de trabajo de años. El seguro Pyme blinda la continuidad de tu empresa ante imprevistos.",
+        beneficios: [
+          "✓ Cobertura Todo Riesgo Daño Material para inventarios, muebles y maquinaria.",
+          "✓ Responsabilidad Civil Extracontractual por daños o lesiones a clientes o terceros.",
+          "✓ Amparo contra hurto calificado, sustracción y actos malintencionados.",
+          "✓ Protección de equipos electrónicos, cómputo y herramientas de trabajo.",
+          "✓ Asistencia de emergencia Pyme: Plomería, electricidad y cerrajería empresarial 24/7."
+        ],
+        faqs: [
+          { q: "¿Qué ampara la cobertura de Todo Riesgo Daño Material?", a: "Protege la edificación y los bienes internos de tu Pyme contra terremoto, incendio, explosión, azote de agua e inundación." },
+          { q: "¿El seguro Pyme cubre si un cliente se lesiona dentro de mi local comercial?", a: "Sí, la sección de Responsabilidad Civil Extracontractual paga las indemnizaciones y gastos médicos exigidos por terceros." },
+          { q: "¿Se pueden asegurar mercancías en tránsito o inventarios variables?", a: "Sí, adaptamos los límites asegurados según el volumen pico de inventario de tu negocio durante el año." },
+          { q: "¿Qué requisitos piden para asegurar un local comercial?", a: "Datos básicos del NIT, dirección, actividad económica y declaración estimada del valor de tus enseres y mercancías." },
+          { q: "¿El seguro Pyme cubre el lucro cesante?", a: "Puedes adicionar el amparo de lucro cesante para recibir un ingreso mensual si el negocio debe cerrar temporalmente por un siniestro." },
+          { q: "¿Sirve este seguro para cumplir contratos con clientes corporativos?", a: "Sí, expedimos los certificados de Responsabilidad Civil requeridos en licitaciones y contratos comerciales." }
+        ]
+      },
+      hogar: {
+        titulo: "Cotiza tu Seguro de Hogar & Contenidos",
+        subtitulo: "Protección integral para tu vivienda y enseres ante terremoto, incendio o hurto.",
+        label: "Ingresa tu Número de Celular",
+        placeholder: "311 234 5678",
+        expTitulo: "¿Por qué asegurar tu Hogar?",
+        expTexto: "Tu vivienda es tu patrimonio más valioso. Un seguro de hogar protege la edificación y tus pertenencias personales con asistencias continuas.",
+        beneficios: [
+          "✓ Cobertura de estructura (muros y techo) ante terremoto, incendio y explosión.",
+          "✓ Protección de contenidos: Electrodomésticos, muebles y objetos de valor contra hurto.",
+          "✓ Asistencia domiciliaria 24/7: Servicios de plomería, electricidad, cerrajería y vidriería.",
+          "✓ Cobertura de Responsabilidad Civil Familiar por daños causados a vecinos o terceros.",
+          "✓ Gastos de arrendamiento temporal si tu casa queda inhabitable por un siniestro."
+        ],
+        faqs: [
+          { q: "¿Puedo contratar un seguro de hogar si vivo en arriendo?", a: "Sí, puedes asegurar únicamente tus pertenencias personales, electrodomésticos y muebles bajo la modalidad de 'Contenidos'." },
+          { q: "¿El seguro de hogar cubre si se rompe un tubo de agua y se daña el piso?", a: "Sí, ampara los daños causados por anegamiento o rotura accidental de tuberías internas." },
+          { q: "¿La póliza cubre los daños causados por mi mascota a un vecino?", a: "Sí, la Responsabilidad Civil Familiar ampara los daños o lesiones ocasionadas por mascotas dentro o fuera de la vivienda." },
+          { q: "¿Qué debo hacer para usar el servicio de cerrajería o plomería de emergencia?", a: "Llamas a la línea 24/7 de la aseguradora y un técnico especializado asistirá a tu hogar sin cobro directo." },
+          { q: "¿El seguro cubre si me roban la bicicleta o el computador fuera de casa?", a: "Muchas pólizas incluyen el amparo fuera del predio para objetos personales portátiles como laptops y bicicletas." },
+          { q: "¿El seguro de hogar exige avalúo comercial del inmueble?", a: "No es obligatorio. Se toma el valor de reconstrucción por metro cuadrado acordado con la compañía." }
+        ]
+      },
+      arrendamiento: {
+        titulo: "Cotiza tu Póliza de Arrendamiento",
+        subtitulo: "Garantiza el pago oportuno de los cánones de arrendamiento, administración y servicios públicos.",
+        label: "Ingresa tu Celular o Cédula",
+        placeholder: "311 234 5678",
+        expTitulo: "¿Por qué contratar Póliza de Arrendamiento?",
+        expTexto: "Elimina el riesgo de no pago. La aseguradora te gira mensualmente el valor del arriendo sin importar si el inquilino entra en mora.",
+        beneficios: [
+          "✓ Garantía del pago mensual del canon de arrendamiento sin retrasos.",
+          "✓ Cobertura del pago de cuotas de administración e impuestos adeudados.",
+          "✓ Cobertura del pago de servicios públicos adeudados por el arrendatario.",
+          "✓ Asistencia y representación jurídica gratuita para el proceso de restitución del inmueble.",
+          "✓ Estudio digital de crédito del arrendatario sin costo para el propietario."
+        ],
+        faqs: [
+          { q: "¿Qué pasa si el inquilino se retrasa en el pago del arriendo?", a: "Notificas a la aseguradora y esta te desembolsa el valor del canon adeudado mientras gestiona el cobro con el inquilino." },
+          { q: "¿Cuánto tiempo se demora el estudio del arrendatario?", a: "El estudio digital de capacidad de pago se completa en menos de 24 horas laborables sin papelería física." },
+          { q: "¿Quién asume el costo de la póliza de arrendamiento?", a: "Habitualmente el costo se negocia entre las partes o lo asume el inquilino como requisito para la entrega del inmueble." },
+          { q: "¿Qué documentos se solicitan al inquilino y deudor solidario?", a: "Cédula, certificación laboral o extractos bancarios que demuestren ingresos equivalentes al doble o triple del canon." },
+          { q: "¿La póliza cubre los servicios públicos que deje debiendo el inquilino al desocupar?", a: "Sí, siempre y cuando se adicione el amparo de servicios públicos adeudados en la carátula de la póliza." },
+          { q: "¿Qué trámite debo hacer para iniciar la restitución del inmueble por mora?", a: "Los abogados de la aseguradora inician el trámite judicial de restitución de bien inmueble sin costos de honorarios para ti." }
+        ]
+      }
+    };
+
+    let productoActual = 'auto';
+
+    function openProductDetail(tipo) {
+      productoActual = tipo;
+      const info = datosSeguros[tipo] || datosSeguros.auto;
+
+      // Cargar Validador
+      document.getElementById('val-titulo').innerText = info.titulo;
+      document.getElementById('val-subtitulo').innerText = info.subtitulo;
+      document.getElementById('val-label').innerText = info.label;
+      const input = document.getElementById('val-input');
+      input.placeholder = info.placeholder;
+      input.value = '';
+
+      // Cargar Explicación
+      document.getElementById('exp-titulo').innerText = info.expTitulo;
+      document.getElementById('exp-texto').innerText = info.expTexto;
+      
+      const lista = document.getElementById('exp-lista');
+      lista.innerHTML = '';
+      info.beneficios.forEach(b => {
+        lista.innerHTML += `<li>${b}</li>`;
+      });
+
+      // Cargar las 6 FAQs específicas con formato acordeón desplegable
+      document.getElementById('faq-titulo').innerText = `Preguntas Frecuentes sobre ${tipo.toUpperCase()}`;
+      const faqBox = document.getElementById('faq-contenedor');
+      faqBox.innerHTML = '';
+      
+      info.faqs.forEach(f => {
+        faqBox.innerHTML += `
+          <div class="faq-accordion-item">
+            <button class="faq-question-btn" onclick="toggleFaqAccordion(this)">
+              <span>${f.q}</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-content">
+              <p>${f.a}</p>
+            </div>
+          </div>
+        `;
+      });
+
+      // Mostrar la sección y hacer scroll suave hacia ella
+      const sec = document.getElementById('section-validador-detalle');
+      sec.style.display = 'block';
+      sec.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function cerrarValidador() {
+      document.getElementById('section-validador-detalle').style.display = 'none';
+      document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function toggleFaqAccordion(button) {
+      const item = button.parentElement;
+      const isActive = item.classList.contains('active');
+
+      // Cierra los demás
+      document.querySelectorAll('.faq-accordion-item').forEach(el => {
+        el.classList.remove('active');
+      });
+
+      // Si no estaba activo, lo abre
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    }
+
+    function procesarCotizacion(e) {
+      e.preventDefault();
+      const val = document.getElementById('val-input').value;
+      const num = "573112306647";
+      const msg = `Hola, Seguros de las Américas 👋%0ADeseo cotizar mi seguro de *${productoActual.toUpperCase()}*.%0A📌 Dato: ${val}`;
+      window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
 
   <!-- SECCIÓN DE VALOR -->
   <section class="value-section">
