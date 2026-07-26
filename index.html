@@ -6,16 +6,33 @@
   <title>Seguros de las Américas | Cotiza y Compara Seguros en Colombia</title>
   
   <!-- SEO & Social Graph -->
-  <meta name="description" content="Agencia internacional de seguros con altos estándares tecnológicos. Cotiza y compara seguros de salud, vida, autos y empresas en Colombia.">
-  <meta name="keywords" content="Seguros Colombia, Seguros de las Américas, Cotizar seguro auto, Medicina Prepagada, CampusLA, Sura, AXA Colpatria">
+  <meta name="description" content="Agencia internacional de seguros con altos estándares tecnológicos. Cotiza y compara seguros de salud, vida, autos, SOAT y empresas en Colombia.">
+  <meta name="keywords" content="Seguros Colombia, Seguros de las Américas, Cotizar seguro auto, SOAT digital, Medicina Prepagada, CampusLA, Sura, AXA Colpatria">
   <meta name="robots" content="index, follow">
 
+  <!-- SEO INVISIBLE: DATOS ESTRUCTURADOS (SCHEMA.ORG) A CAMPUSLA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": "Seguros de las Américas",
+    "provider": {
+      "@type": "Organization",
+      "name": "Seguros de las Américas",
+      "sameAs": "https://www.campuslatinoamerica.edu.co"
+    },
+    "category": "Insurtech / Pólizas de Seguros Colombia"
+  }
+  </script>
+
+  <!-- ESTILOS UNIFICADOS - PALETA NAVY & EMERALD MINT (SUPER OUTFIT) -->
   <style>
     :root {
       --primary-navy: #002147;       /* Azul Marino Corporativo */
       --primary-cyan: #00A8E8;       /* Azul Cyan Institucional */
-      --brand-orange: #FF6B35;      /* Naranja de Conversión */
-      --brand-orange-hover: #E8551F;/* Naranja Oscuro */
+      --emerald-mint: #00C49F;       /* Verde Esmeralda Menta */
+      --emerald-hover: #00A383;      /* Verde Esmeralda Hover */
+      --brand-orange: #FF6B35;       
       --bright-yellow: #FFC72C;      /* Amarillo Badge */
       --dark-text: #0f172a;
       --light-bg: #f8fafc;
@@ -23,12 +40,12 @@
       --border-color: #e2e8f0;
       --text-muted: #64748b;
       --hover-bg: #f1f5f9;
-      --whatsapp-green: #25D366;
       --shadow-soft: 0 12px 32px rgba(0, 33, 71, 0.08);
       --shadow-hover: 0 20px 40px rgba(0, 168, 232, 0.16);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--light-bg); color: var(--dark-text); line-height: 1.6; overflow-x: hidden; }
 
     /* TOP BAR DE CONTACTO */
@@ -49,7 +66,7 @@
     nav a:hover { color: var(--primary-cyan); }
     .btn-nav-contact { background: var(--primary-cyan); color: #fff !important; padding: 8px 18px; border-radius: 50px; font-weight: 700 !important; }
 
-    /* 1. PRIMERA SECCIÓN: PRESENTACIÓN INTERNACIONAL + CÓMO FUNCIONA */
+    /* 1. SECCIÓN: CÓMO FUNCIONA */
     .how-it-works-section { max-width: 1150px; margin: 40px auto 30px; padding: 0 20px; }
     .how-it-works-container { background: #ffffff; border-radius: 24px; padding: 45px 35px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0, 33, 71, 0.04); text-align: center; }
     .badge-how { background: rgba(0, 168, 232, 0.12); color: var(--primary-cyan); padding: 6px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 15px; letter-spacing: 0.5px; }
@@ -71,17 +88,17 @@
     .feature-item strong { color: var(--primary-navy); }
     .feature-icon { font-size: 1.3rem; }
 
-    /* 2. SEGUNDA SECCIÓN: HERO Y COTIZADOR INTERACTIVO */
-    .custom-hero { max-width: 1150px; margin: 0 auto 50px; background: #ffffff; border-radius: 24px; padding: 50px 40px; box-shadow: 0 15px 35px rgba(0, 33, 71, 0.06); border: 1px solid var(--border-color); position: relative; overflow: hidden; }
+    /* 2. HERO Y COTIZADOR SOAT / RÁPIDO */
+    .custom-hero { max-width: 1150px; margin: 0 auto 30px; background: #ffffff; border-radius: 24px; padding: 50px 40px; box-shadow: 0 15px 35px rgba(0, 33, 71, 0.06); border: 1px solid var(--border-color); position: relative; overflow: hidden; }
     .hero-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
     .hero-info { text-align: left; }
-    .hero-badge-tag { background: rgba(255, 107, 53, 0.12); color: var(--brand-orange); padding: 6px 14px; border-radius: 30px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 20px; }
+    .hero-badge-tag { background: rgba(0, 196, 159, 0.12); color: var(--emerald-mint); padding: 6px 14px; border-radius: 30px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 20px; }
     .hero-main-title { font-size: 2.8rem; font-weight: 900; color: var(--primary-navy); line-height: 1.15; margin-bottom: 15px; letter-spacing: -0.5px; }
-    .hero-main-title span { color: var(--brand-orange); }
+    .hero-main-title span { color: var(--primary-cyan); }
     .hero-subtitle { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 30px; }
 
-    .social-proof-badge { display: inline-flex; align-items: center; gap: 15px; background: #fff8f5; border: 2px dashed var(--brand-orange); padding: 12px 20px; border-radius: 16px; }
-    .social-proof-number { font-size: 1.8rem; font-weight: 900; color: var(--brand-orange); line-height: 1; }
+    .social-proof-badge { display: inline-flex; align-items: center; gap: 15px; background: #f0fdf4; border: 2px dashed var(--emerald-mint); padding: 12px 20px; border-radius: 16px; }
+    .social-proof-number { font-size: 1.8rem; font-weight: 900; color: var(--emerald-mint); line-height: 1; }
     .social-proof-text { font-size: 0.82rem; font-weight: 700; color: var(--primary-navy); text-transform: uppercase; line-height: 1.3; }
 
     .quote-box { background: var(--card-bg); border-radius: 20px; padding: 30px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); border: 2px solid #f1f5f9; position: relative; }
@@ -92,24 +109,100 @@
 
     .plate-input-wrapper { position: relative; margin-bottom: 20px; }
     .plate-input { width: 100%; padding: 16px; font-size: 1.3rem; font-weight: 900; text-align: center; text-transform: uppercase; letter-spacing: 3px; border: 2px solid var(--border-color); border-radius: 12px; outline: none; transition: border-color 0.2s ease; }
-    .plate-input:focus { border-color: var(--brand-orange); box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15); }
+    .plate-input:focus { border-color: var(--primary-cyan); box-shadow: 0 0 0 4px rgba(0, 168, 232, 0.15); }
     .plate-label { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; display: block; text-align: center; }
 
-    .btn-cotizar-orange { width: 100%; background: var(--brand-orange); color: #ffffff; border: none; padding: 16px; border-radius: 12px; font-size: 1.05rem; font-weight: 900; cursor: pointer; transition: background 0.2s ease, transform 0.1s ease; box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3); display: flex; align-items: center; justify-content: center; gap: 10px; }
-    .btn-cotizar-orange:hover { background: var(--brand-orange-hover); transform: translateY(-2px); }
+    .btn-cotizar-orange { width: 100%; background: var(--emerald-mint); color: #ffffff; border: none; padding: 16px; border-radius: 12px; font-size: 1.05rem; font-weight: 900; cursor: pointer; transition: background 0.2s ease, transform 0.1s ease; box-shadow: 0 8px 20px rgba(0, 196, 159, 0.3); display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .btn-cotizar-orange:hover { background: var(--emerald-hover); transform: translateY(-2px); }
     .quote-secondary-link { display: block; margin-top: 15px; text-align: center; font-size: 0.85rem; color: var(--primary-navy); font-weight: 700; text-decoration: underline; cursor: pointer; }
 
-    /* CARDS DE COTIZACIÓN RÁPIDA */
-    .quick-quote-grid { max-width: 1150px; margin: 0 auto 60px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; position: relative; z-index: 10; }
-    .quote-card { background: var(--card-bg); padding: 25px; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
-    .quote-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,168,232,0.12); border-color: var(--primary-cyan); }
-    .quote-icon { width: 60px; height: 60px; background: rgba(0,168,232,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.8rem; color: var(--primary-cyan); }
-    .quote-title { font-size: 1.1rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 8px; }
-    .quote-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px; }
-    .btn-quote { width: 100%; background: var(--primary-navy); color: #ffffff; border: none; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: background 0.2s; }
+    /* 3. FORMULARIO B2B COMPACTO CON GADGET ROBOT IA (AJUSTE SOLICITADO) */
+    .b2b-wrapper-section { max-width: 1050px; margin: 0 auto 50px; padding: 0 20px; }
+    .b2b-layout-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 30px; align-items: center; background: #ffffff; border-radius: 24px; padding: 35px; border: 1px solid var(--border-color); box-shadow: 0 15px 35px rgba(0, 33, 71, 0.06); }
+    
+    .b2b-gadget-side { text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #eef6fc 100%); padding: 30px 20px; border-radius: 20px; border: 1px dashed var(--primary-cyan); }
+    .robot-gadget-svg { width: 130px; height: auto; margin-bottom: 15px; filter: drop-shadow(0 8px 15px rgba(0, 168, 232, 0.2)); animation: floatRobot 3.5s ease-in-out infinite; }
+    @keyframes floatRobot { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .robot-gadget-title { font-size: 1.15rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 6px; }
+    .robot-gadget-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+    
+    .b2b-card-container { max-width: 540px; margin: 0 auto; width: 100%; }
+    .b2b-header { text-align: left; margin-bottom: 22px; }
+    .b2b-badge { background: rgba(0, 168, 232, 0.12); color: var(--primary-cyan); padding: 4px 14px; border-radius: 30px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 10px; letter-spacing: 0.5px; }
+    .b2b-header h2 { font-size: 1.6rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 6px; line-height: 1.2; }
+    .b2b-header p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; }
+    
+    .b2b-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px; }
+    .b2b-full { grid-column: span 2; }
+    .b2b-group { display: flex; flex-direction: column; gap: 4px; text-align: left; }
+    .b2b-group label { font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; }
+    .b2b-group input, .b2b-group select { width: 100%; padding: 11px 13px; font-size: 0.9rem; border: 1.5px solid var(--border-color); border-radius: 10px; outline: none; transition: all 0.2s ease; background: #ffffff; color: var(--dark-text); }
+    .b2b-group input:focus, .b2b-group select:focus { border-color: var(--primary-cyan); box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.15); }
+    
+    .b2b-legal { display: flex; align-items: flex-start; gap: 10px; font-size: 0.73rem; color: var(--text-muted); margin-bottom: 18px; text-align: left; line-height: 1.45; background: #f8fafc; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border-color); }
+    .b2b-legal input[type="checkbox"] { margin-top: 2px; min-width: 16px; min-height: 16px; accent-color: var(--emerald-mint); }
+    
+    .btn-b2b-submit { width: 100%; background: var(--emerald-mint); color: #ffffff; border: none; padding: 14px; border-radius: 10px; font-weight: 900; font-size: 0.98rem; cursor: pointer; transition: background 0.2s ease, transform 0.1s ease; box-shadow: 0 8px 20px rgba(0, 196, 159, 0.3); }
+    .btn-b2b-submit:hover { background: var(--emerald-hover); transform: translateY(-2px); }
+
+    /* 4. COTIZADOR MULTI-PASO (9 CATEGORÍAS) */
+    .flow-container { max-width: 1200px; margin: 30px auto 40px; padding: 0 20px; }
+    
+    .stepper-bar { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 35px; }
+    .step-node { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 800; color: var(--text-muted); }
+    .step-node.active { color: var(--primary-navy); }
+    .step-number-node { width: 28px; height: 28px; border-radius: 50%; background: #e2e8f0; color: var(--text-muted); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.8rem; }
+    .step-node.active .step-number-node { background: var(--primary-cyan); color: #ffffff; }
+    .step-line { width: 40px; height: 2px; background: #e2e8f0; }
+
+    .step-view { display: none; animation: fadeIn 0.35s ease-in-out forwards; }
+    .step-view.active-view { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .quick-quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; max-width: 1200px; margin: 0 auto; }
+    .quote-card { background: #ffffff; padding: 28px 20px 22px; border-radius: 20px; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: center; transition: all 0.3s ease; display: flex; flex-direction: column; justify-content: space-between; }
+    .quote-card:hover { transform: translateY(-6px); box-shadow: 0 16px 35px rgba(0, 168, 232, 0.14); border-color: var(--primary-cyan); }
+    .quote-card-content { display: flex; flex-direction: column; align-items: center; flex-grow: 1; }
+    .quote-icon { width: 58px; height: 58px; background: rgba(0, 168, 232, 0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--primary-cyan); }
+    .quote-title { font-size: 1.12rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 8px; line-height: 1.25; }
+    .quote-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+    
+    .btn-quote { width: 100%; background: var(--primary-navy); color: #ffffff; border: none; padding: 12px 10px; border-radius: 10px; font-weight: 800; font-size: 0.85rem; cursor: pointer; transition: background 0.2s ease; }
     .btn-quote:hover { background: var(--primary-cyan); }
 
-    /* SECCIÓN DE VALOR Y PROPUESTA */
+    /* FORMULARIO PASO 2 */
+    .form-card-container { background: #ffffff; max-width: 650px; margin: 0 auto; border-radius: 20px; padding: 35px 30px; border: 1px solid var(--border-color); box-shadow: var(--shadow-soft); }
+    .btn-back-link { background: none; border: none; color: var(--primary-navy); font-weight: 800; font-size: 0.88rem; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 5px; }
+    .form-header { text-align: center; margin-bottom: 25px; }
+    .form-header h2 { font-size: 1.75rem; color: var(--primary-navy); font-weight: 900; margin-bottom: 6px; }
+    .form-header p { color: var(--text-muted); font-size: 0.92rem; }
+    .inputs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+    .input-full { grid-column: span 2; }
+    .field-group { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+    .field-group label { font-size: 0.78rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; }
+    .field-group input, .field-group select { width: 100%; padding: 13px 15px; font-size: 0.95rem; border: 1.5px solid var(--border-color); border-radius: 10px; outline: none; transition: border-color 0.2s; }
+    .field-group input:focus, .field-group select:focus { border-color: var(--primary-cyan); }
+    .highlight-input { font-weight: 900; font-size: 1.1rem !important; text-align: center; text-transform: uppercase; border-color: var(--primary-cyan) !important; background: #f0fdf4; }
+    .checkbox-legal { display: flex; align-items: flex-start; gap: 10px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 22px; text-align: left; }
+    .btn-submit-action { width: 100%; background: var(--emerald-mint); color: #ffffff; border: none; padding: 15px; border-radius: 12px; font-weight: 900; font-size: 1rem; cursor: pointer; transition: background 0.2s; box-shadow: 0 8px 20px rgba(0, 196, 159, 0.25); }
+    .btn-submit-action:hover { background: var(--emerald-hover); }
+
+    /* PASO 3 RESULTADOS */
+    .results-layout { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 25px; }
+    .summary-card { background: #ffffff; border-radius: 18px; padding: 25px 30px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow-soft); }
+    .checkout-option-card { background: #ffffff; border-radius: 18px; padding: 30px; border: 2px solid var(--primary-cyan); box-shadow: 0 8px 25px rgba(0, 168, 232, 0.1); text-align: left; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+
+    /* FAQS ACORDEÓN DESPLEGABLE PASO 3 */
+    .faq-accordion-item { background: #ffffff; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; transition: all 0.25s ease; margin-bottom: 10px; }
+    .faq-accordion-item.active { border-color: var(--primary-cyan); box-shadow: 0 4px 15px rgba(0, 168, 232, 0.08); }
+    .faq-question-btn { width: 100%; background: none; border: none; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; font-weight: 800; color: var(--primary-navy); cursor: pointer; text-align: left; }
+    .faq-question-btn:hover { background: var(--hover-bg); color: var(--primary-cyan); }
+    .faq-toggle-icon { font-size: 1.4rem; font-weight: 700; color: var(--primary-navy); transition: transform 0.3s ease; margin-left: 15px; }
+    .faq-accordion-item.active .faq-toggle-icon { transform: rotate(45deg); color: var(--primary-cyan); }
+    .faq-answer-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s ease; padding: 0 20px; color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+    .faq-accordion-item.active .faq-answer-content { max-height: 300px; padding: 0 20px 18px 20px; }
+
+    /* 5. PROPUESTA DE VALOR */
     .value-section { max-width: 1150px; margin: 60px auto; padding: 0 20px; text-align: center; }
     .value-title { font-size: 2.2rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 45px; letter-spacing: -0.5px; line-height: 1.2; }
     .value-title span { color: var(--primary-cyan); }
@@ -124,7 +217,7 @@
     .card-heading em { font-style: normal; color: var(--primary-cyan); }
     .card-description { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; flex-grow: 1; }
 
-    /* 3. SECCIÓN DE ASEGURADORAS ALIADAS (12 CARDS COMPLETAS) */
+    /* 6. ASEGURADORAS ALIADAS */
     .partners-container { max-width: 1150px; margin: 60px auto; padding: 0 20px; text-align: center; }
     .section-title { font-size: 2.2rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 8px; letter-spacing: -0.5px; }
     .section-subtitle { font-size: 1rem; color: var(--text-muted); margin-bottom: 35px; }
@@ -135,7 +228,7 @@
     .partner-card:hover svg { fill: var(--primary-navy); transform: scale(1.05); }
     .partner-card:hover .accent-cyan { fill: var(--primary-cyan) !important; }
 
-    /* ACADEMIA CAMPUSLA */
+    /* 7. ACADEMIA CAMPUSLA MOODLE */
     .academy-section { max-width: 1150px; margin: 60px auto; padding: 0 20px; }
     .academy-header { text-align: center; max-width: 800px; margin: 0 auto 40px; }
     .academy-tag { background: rgba(0, 168, 232, 0.12); color: var(--primary-cyan); padding: 6px 16px; border-radius: 30px; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 15px; }
@@ -157,7 +250,7 @@
     .btn-course-action { width: 100%; background: var(--primary-navy); color: #ffffff; text-decoration: none; padding: 12px; border-radius: 10px; font-weight: 800; font-size: 0.88rem; text-align: center; transition: all 0.2s ease; display: block; }
     .course-card:hover .btn-course-action { background: var(--primary-cyan); }
 
-    /* NEWSROOM SILICON VALLEY */
+    /* 8. NEWSROOM SILICON VALLEY */
     .newsroom-section { max-width: 1150px; margin: 60px auto; padding: 0 20px; }
     .newsroom-hero { background: linear-gradient(135deg, #ffffff 0%, #eef6fc 100%); border-radius: 24px; padding: 35px; border: 1px solid var(--border-color); box-shadow: 0 12px 32px rgba(0, 33, 71, 0.06); display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 30px; margin-bottom: 40px; }
     .badge-yellow-canguro { background: var(--bright-yellow); color: var(--primary-navy); padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 900; text-transform: uppercase; display: inline-block; margin-bottom: 12px; transform: rotate(-2deg); }
@@ -183,7 +276,7 @@
     .author-avatar { width: 26px; height: 26px; background: var(--primary-navy); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 900; }
     .btn-read-more { color: var(--primary-cyan); text-decoration: none; font-weight: 800; font-size: 0.85rem; }
 
-    /* 4. PREGUNTAS FRECUENTES FAQ COMPLETA CON DESPLEGABLE */
+    /* 9. PREGUNTAS FRECUENTES FAQ GENERAL INSTITUCIONAL */
     .faq-section { max-width: 900px; margin: 60px auto; padding: 0 20px; text-align: center; }
     .faq-title { font-size: 2.2rem; font-weight: 900; color: var(--primary-navy); margin-bottom: 35px; letter-spacing: -0.5px; }
     .faq-container { display: flex; flex-direction: column; gap: 12px; text-align: left; }
@@ -206,7 +299,7 @@
     .campusla-info p { color: #94a3b8; font-size: 0.9rem; max-width: 650px; }
     .btn-campusla { background: var(--primary-cyan); color: #ffffff; padding: 12px 24px; border-radius: 8px; font-weight: 800; text-decoration: none; font-size: 0.9rem; display: inline-block; }
 
-    /* FOOTER */
+    /* FOOTER CON FIRMA Y BACKLINK CAMPUSLA */
     footer { background: var(--primary-navy); color: #94a3b8; padding: 40px 20px 20px; border-top: 4px solid var(--primary-cyan); font-size: 0.85rem; }
     .footer-container { max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
     .footer-col h4 { color: #ffffff; font-size: 0.95rem; font-weight: 800; margin-bottom: 15px; text-transform: uppercase; border-bottom: 2px solid var(--primary-cyan); padding-bottom: 5px; display: inline-block; }
@@ -215,23 +308,24 @@
     .footer-col a { color: #cbd5e1; text-decoration: none; transition: color 0.2s; }
     .footer-col a:hover { color: var(--primary-cyan); }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; }
+    .footer-bottom a { color: #ffffff; font-weight: 800; text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; color: var(--primary-cyan); }
 
-    /* MODAL POP-UP COTIZACIÓN */
-    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,23,42,0.8); z-index: 1000; justify-content: center; align-items: center; padding: 15px; }
-    .modal-card { background: #ffffff; width: 100%; max-width: 480px; padding: 30px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative; max-height: 90vh; overflow-y: auto; }
-    .modal-card h3 { color: var(--primary-navy); margin-bottom: 10px; font-size: 1.3rem; border-bottom: 2px solid var(--primary-cyan); padding-bottom: 5px; }
-    .modal-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; }
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--dark-text); margin-bottom: 5px; }
-    .form-group input, .form-group select { width: 100%; padding: 11px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.9rem; outline: none; }
-    .form-group input:focus { border-color: var(--primary-cyan); }
-    .btn-submit-lead { width: 100%; background: var(--whatsapp-green); color: #ffffff; border: none; padding: 14px; border-radius: 8px; font-weight: 800; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .close-btn { position: absolute; top: 15px; right: 15px; background: #f1f5f9; border: none; font-size: 1.2rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; color: var(--dark-text); }
+    /* BOTÓN FLOTANTE INTELIGENTE DE WHATSAPP */
+    .wa-float-btn { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: #ffffff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 9999; cursor: pointer; transition: transform 0.3s ease; text-decoration: none; }
+    .wa-float-btn:hover { transform: scale(1.08); }
 
-    /* REGLAS RESPONSIVE TOTALES PARA MÓVILES (MEDIAS QUERIES) */
+    /* REGLAS RESPONSIVE TOTALES PARA MÓVILES */
+    @media (max-width: 1024px) {
+      .quick-quote-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 820px) {
+      .b2b-layout-grid { grid-template-columns: 1fr !important; padding: 25px 20px !important; }
+      .b2b-gadget-side { display: flex; align-items: center; gap: 15px; text-align: left; padding: 15px 20px; }
+      .robot-gadget-svg { width: 70px; margin-bottom: 0; }
+    }
     @media (max-width: 768px) {
       body { padding: 0 !important; }
-      
       .top-bar { text-align: center; justify-content: center; font-size: 0.75rem; }
       .nav-container { flex-direction: column; gap: 15px; text-align: center; }
       nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
@@ -262,19 +356,21 @@
         padding: 0 15px !important;
       }
 
+      .inputs-grid, .b2b-grid { grid-template-columns: 1fr !important; }
+      .input-full, .b2b-full { grid-column: span 1 !important; }
+      .summary-card, .checkout-option-card { flex-direction: column; text-align: center; }
+
       .newsroom-hero { grid-template-columns: 1fr !important; text-align: center; padding: 20px 15px !important; }
       .newsroom-title { font-size: 1.6rem !important; }
 
       .campusla-integration { flex-direction: column; text-align: center; padding: 25px 15px !important; }
       .btn-campusla { width: 100%; }
-
-      .modal-card { width: 92% !important; padding: 20px 15px !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
+  <!-- TOP BAR DE CONTACTO -->
   <div class="top-bar">
     <div>
       <span>📍 Cobertura Nacional en Colombia</span>
@@ -282,7 +378,7 @@
     </div>
     <div>
       <span>¿Buscas un seguro especializado?</span>
-      <a href="javascript:void(0)" onclick="openQuoteModal('Asistencia Especializada')">Solicitar Asesoría →</a>
+      <a href="#registro-b2b">Solicitar Asesoría →</a>
     </div>
   </div>
 
@@ -299,16 +395,17 @@
       <nav>
         <ul>
           <li><a href="#como-funciona">¿Cómo Funciona?</a></li>
-          <li><a href="#productos">Productos</a></li>
+          <li><a href="#cotizador-sec">Cotizador</a></li>
+          <li><a href="#registro-b2b">Empresas & Ofertas</a></li>
           <li><a href="#aliados">Aliados</a></li>
           <li><a href="#academia">Academia</a></li>
-          <li><a href="javascript:void(0)" onclick="openQuoteModal('Contacto General')" class="btn-nav-contact">Contáctanos</a></li>
+          <li><a href="#registro-b2b" class="btn-nav-contact">Contáctanos</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- 1. PRIMERA SECCIÓN: PRESENTACIÓN DE SDAMERICAS Y PASO A PASO CON IA -->
+  <!-- 1. PRESENTACIÓN Y PASO A PASO -->
   <section class="how-it-works-section" id="como-funciona" itemscope itemtype="https://schema.org/HowTo">
     <div class="how-it-works-container">
       <div class="how-header">
@@ -320,7 +417,6 @@
       </div>
 
       <div class="steps-grid">
-        <!-- PASO 1 -->
         <div class="step-card" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
           <div class="step-number">1</div>
           <div class="step-icon">📝</div>
@@ -330,7 +426,6 @@
           </p>
         </div>
 
-        <!-- PASO 2 -->
         <div class="step-card" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
           <div class="step-number">2</div>
           <div class="step-icon">🤖</div>
@@ -340,7 +435,6 @@
           </p>
         </div>
 
-        <!-- PASO 3 -->
         <div class="step-card" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
           <div class="step-number">3</div>
           <div class="step-icon">📱</div>
@@ -351,7 +445,6 @@
         </div>
       </div>
 
-      <!-- TIRA DE BENEFICIOS Y RESPALDO LEGAL / EDUCATIVO -->
       <div class="tech-feature-strip">
         <div class="feature-item">
           <span class="feature-icon">🎓</span>
@@ -369,7 +462,7 @@
     </div>
   </section>
 
-  <!-- 2. SEGUNDA SECCIÓN: HERO Y COTIZADOR INTERACTIVO -->
+  <!-- 2. HERO Y COTIZADOR SOAT / RÁPIDO -->
   <section class="custom-hero">
     <div class="hero-layout">
 
@@ -392,16 +485,16 @@
 
       <div class="quote-box">
         <div class="quote-tabs">
-          <button class="tab-btn active" onclick="selectTab(this, 'auto')">🚗 Autos</button>
+          <button class="tab-btn active" onclick="selectTab(this, 'soat')">📄 SOAT</button>
+          <button class="tab-btn" onclick="selectTab(this, 'auto')">🚗 Autos</button>
           <button class="tab-btn" onclick="selectTab(this, 'moto')">🏍️ Motos</button>
-          <button class="tab-btn" onclick="selectTab(this, 'salud')">🏥 Salud</button>
         </div>
 
-        <h3 class="quote-box-title" id="form-title">Cotiza tu Seguro Todo Riesgo Auto</h3>
+        <h3 class="quote-box-title" id="form-title">Comprar SOAT Digital Inmediato</h3>
 
         <form id="hero-quote-form" onsubmit="handleQuoteSubmit(event)">
           <div class="plate-input-wrapper" id="input-container">
-            <label class="plate-label" id="input-label">Ingresa la Placa de tu Vehículo</label>
+            <label class="plate-label" id="input-label">Ingresa la Placa de tu Vehículo o Moto</label>
             <input type="text" class="plate-input" id="main-input" placeholder="ABC-123" maxlength="7" required oninput="formatPlate(this)">
           </div>
 
@@ -414,597 +507,354 @@
       </div>
 
     </div>
-  <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seguros de las Américas | Cotizador Inteligente</title>
+  </section>
 
-  <!-- ESTILOS UNIFICADOS -->
-  <style>
-    :root {
-      --primary-navy: #002147;
-      --primary-cyan: #00A8E8;
-      --brand-orange: #FF6B35;
-      --dark-text: #0f172a;
-      --light-bg: #f8fafc;
-      --card-bg: #ffffff;
-      --border-color: #e2e8f0;
-      --text-muted: #64748b;
-      --hover-bg: #f1f5f9;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-      background-color: var(--light-bg); 
-      color: var(--dark-text); 
-      line-height: 1.5; 
-      overflow-x: hidden; 
-    }
-
-    /* GRILLA DE 8 TARJETAS SIMÉTRICAS (4X2) */
-    .quick-quote-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      width: 100%;
-      max-width: 1250px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .quote-card {
-      background: #ffffff;
-      padding: 28px 20px 22px;
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-      text-align: center;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .quote-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 35px rgba(0, 168, 232, 0.14);
-      border-color: var(--primary-cyan);
-    }
-
-    .quote-card-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-grow: 1;
-    }
-
-    .quote-icon {
-      width: 58px;
-      height: 58px;
-      background: rgba(0, 168, 232, 0.08);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      color: var(--primary-cyan);
-    }
-
-    .quote-title {
-      font-size: 1.12rem;
-      font-weight: 900;
-      color: var(--primary-navy);
-      margin-bottom: 8px;
-      line-height: 1.25;
-    }
-
-    .quote-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
-
-    .btn-quote {
-      width: 100%;
-      background: var(--primary-navy);
-      color: #ffffff;
-      border: none;
-      padding: 12px 10px;
-      border-radius: 10px;
-      font-weight: 800;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    .btn-quote:hover {
-      background: var(--primary-cyan);
-    }
-
-    /* ESTILOS FAQS ACORDEÓN DESPLEGABLE */
-    .faq-accordion-item {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.25s ease;
-    }
-
-    .faq-accordion-item.active {
-      border-color: var(--primary-cyan);
-      box-shadow: 0 4px 15px rgba(0, 168, 232, 0.08);
-    }
-
-    .faq-question-btn {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 18px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--primary-navy);
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .faq-question-btn:hover {
-      background: var(--hover-bg);
-      color: var(--primary-cyan);
-    }
-
-    .faq-toggle-icon {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary-navy);
-      transition: transform 0.3s ease;
-      margin-left: 15px;
-    }
-
-    .faq-accordion-item.active .faq-toggle-icon {
-      transform: rotate(45deg);
-      color: var(--primary-cyan);
-    }
-
-    .faq-answer-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.3s ease;
-      padding: 0 20px;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.6;
-    }
-
-    .faq-accordion-item.active .faq-answer-content {
-      max-height: 300px;
-      padding: 0 20px 18px 20px;
-    }
-
-    @media (max-width: 1024px) {
-      .quick-quote-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px) {
-      .quick-quote-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- GRILLA DE LAS 8 TARJETAS DE SEGUROS -->
-  <div class="quick-quote-grid" id="productos">
-
-    <!-- 1. AUTOS -->
-    <div class="quote-card">
-      <div class="quote-card-content">
-        <div class="quote-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4h14v4z"/><circle cx="7.5" cy="14.5" r="1.5"/><circle cx="16.5" cy="14.5" r="1.5"/></svg>
-        </div>
-        <h3 class="quote-title">Seguro de Autos</h3>
-        <p class="quote-desc">Protección Todo Riesgo, daños a terceros, pérdida parcial/total y asistencias 24/7.</p>
-      </div>
-      <button class="btn-quote" onclick="openProductDetail('auto')">Cotizar Seguro de Auto →</button>
-    </div>
-
-    <!-- 2. MOTOS -->
-    <div class="quote-card">
-      <div class="quote-card-content">
-        <div class="quote-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="16" r="3"/><circle cx="19" cy="16" r="3"/><path d="M12 16h3l3-6h-3l-2-3H9l-1 3H5"/><path d="M12 8V5h3"/></svg>
-        </div>
-        <h3 class="quote-title">Seguro de Motos</h3>
-        <p class="quote-desc">Cobertura especializada por hurto, accidentes, repuestos y responsabilidad civil.</p>
-      </div>
-      <button class="btn-quote" onclick="openProductDetail('moto')">Cotizar Seguro de Moto →</button>
-    </div>
-
-    <!-- 3. SALUD -->
-    <div class="quote-card">
-      <div class="quote-card-content">
-        <div class="quote-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/><path d="M12 7v6M9 10h6"/></svg>
-        </div>
-        <h3 class="quote-title">Planes de Salud</h3>
-        <p class="quote-desc">Medicina prepagada, acceso directo a especialistas y clínicas de primer nivel.</p>
-      </div>
-      <button class="btn-quote" onclick="openProductDetail('salud')">Cotizar Planes de Salud →</button>
-    </div>
-
-    <!-- 4. VIDA -->
-    <div class="quote-card">
-      <div class="quote-card-content">
-        <div class="quote-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="quote-title">Seguros de Vida</h3>
-        <p class="quote-desc">Respaldo financiero familiar de libre inversión por invalidez o fallecimiento.</p>
-      </div>
-      <button class="btn-quote" onclick="openProductDetail('vida')">Cotizar Seguro de Vida →</button>
-    </div>
-
-    <!-- 5. ESTUDIANTIL / VIAJES -->
-    <div class="quote-card">
-      <div class="quote-card-content">
-        <div class="quote-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 6 2 6 2s6 0 6-2v-5"/></svg>
-        </div>
-        <h3 class="quote-title">Estudiantil / Viajes</h3>
-        <p class="quote-desc">Cobertura académica, accidentes universitarios y asistencia médica internacional.</p>
-      </div>
-      <button class="btn-quote" onclick="openProductDetail('estudiantil')">Cotizar Estudiantil / Viajes →</button>
-    </div>
-
-    <!-- 6. PYME & EMPRESAS -->
-    <div class="quote-card">
-      <div class="quote-card-content">
-        <div class="quote-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2"/></svg>
-        </div>
-        <h3 class="quote-title">Seguros Pyme & Empresas</h3>
-        <p class="quote-desc">Protección para tu negocio contra todo riesgo, daño material y responsabilidad civil.</p>
-      </div>
-      <button class="btn-quote" onclick="openProductDetail('pyme')">Cotizar Seguro Pyme →</button>
-    </div>
-
-    <!-- 7. HOGAR -->
-    <div class="quote-card">
-      <div class="quote-card-content">
-        <div class="quote-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3 class="quote-title">Seguro de Hogar</h3>
-        <p class="quote-desc">Protección para tu vivienda y contenidos contra terremoto, hurto e incendio.</p>
-      </div>
-      <button class="btn-quote" onclick="openProductDetail('hogar')">Cotizar Seguro de Hogar →</button>
-    </div>
-
-    <!-- 8. ARRENDAMIENTO & PÓLIZAS -->
-    <div class="quote-card">
-      <div class="quote-card-content">
-        <div class="quote-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-2-2l2 2M3 11l9-9 9 9v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="2"/></svg>
-        </div>
-        <h3 class="quote-title">Arrendamiento & Pólizas</h3>
-        <p class="quote-desc">Garantía de pago de cánones de arrendamiento, administración y servicios públicos.</p>
-      </div>
-      <button class="btn-quote" onclick="openProductDetail('arrendamiento')">Cotizar Arrendamiento →</button>
-    </div>
-
-  </div>
-
-  <!-- SECCIÓN DESPLEGABLE CON VALIDADOR + EXPLICACIÓN + FAQS -->
-  <div id="section-validador-detalle" style="display: none; max-width: 1100px; margin: 40px auto; padding: 0 20px;">
-    
-    <button onclick="cerrarValidador()" style="background:#002147; color:#fff; border:none; padding:10px 20px; border-radius:30px; font-weight:bold; cursor:pointer; margin-bottom:25px;">← Volver a todos los seguros</button>
-
-    <!-- VALIDADOR / COTIZADOR -->
-    <div style="background:#ffffff; border-radius:20px; padding:35px; border:1px solid #e2e8f0; box-shadow:0 10px 30px rgba(0,0,0,0.05); text-align:center; margin-bottom:30px;">
-      <h2 id="val-titulo" style="color:#002147; font-size:2rem; font-weight:900; margin-bottom:10px;">Cotiza tu Seguro</h2>
-      <p id="val-subtitulo" style="color:#64748b; margin-bottom:25px;">Compara en tiempo real con más de 12 aseguradoras en Colombia.</p>
+  <!-- 3. FORMULARIO B2B / ASESORÍA RECOMPAGINADO (MÁS PEQUEÑO Y CON ROBOT GADGET AL COSTADO) -->
+  <section class="b2b-wrapper-section" id="registro-b2b">
+    <div class="b2b-layout-grid">
       
-      <form onsubmit="procesarCotizacion(event)" style="max-width:450px; margin:0 auto;">
-        <label id="val-label" style="display:block; font-size:0.85rem; font-weight:bold; color:#64748b; text-transform:uppercase; margin-bottom:8px;">Ingresa la Placa</label>
-        <input type="text" id="val-input" placeholder="ABC-123" required style="width:100%; padding:15px; font-size:1.3rem; font-weight:900; text-align:center; border:2px solid #e2e8f0; border-radius:12px; margin-bottom:18px; outline:none;">
-        <button type="submit" style="width:100%; background:#FF6B35; color:#fff; border:none; padding:16px; border-radius:12px; font-weight:900; font-size:1.05rem; cursor:pointer;">Ver mejores opciones ahora →</button>
-      </form>
-    </div>
-
-    <!-- EXPLICACIÓN: POR QUÉ COMPRAR -->
-    <div style="background:#ffffff; border-radius:20px; padding:35px; border:1px solid #e2e8f0; margin-bottom:30px;">
-      <h3 id="exp-titulo" style="color:#002147; font-size:1.6rem; font-weight:800; margin-bottom:12px;">¿Por qué es importante contratar este seguro?</h3>
-      <p id="exp-texto" style="color:#64748b; line-height:1.6; margin-bottom:20px;">Protege tu patrimonio y tranquilidad frente a eventos imprevistos en Colombia con coberturas integrales.</p>
-      <ul id="exp-lista" style="list-style:none; display:flex; flex-direction:column; gap:10px; color:#0f172a; font-weight:600;">
-        <!-- Beneficios cargados dinámicamente -->
-      </ul>
-    </div>
-
-    <!-- FAQS DESPLEGABLES DEL PRODUCTO SELECCIONADO (6 FAQS) -->
-    <div style="background:#ffffff; border-radius:20px; padding:35px; border:1px solid #e2e8f0;">
-      <h3 id="faq-titulo" style="color:#002147; font-size:1.6rem; font-weight:800; margin-bottom:20px;">Preguntas Frecuentes</h3>
-      <div id="faq-contenedor" style="display:flex; flex-direction:column; gap:12px;">
-        <!-- FAQs inyectadas por JS -->
+      <!-- GADGET IZQUIERDO CON EL ROBOT INSURTECH DE LA AGENCIA -->
+      <div class="b2b-gadget-side">
+        <svg class="robot-gadget-svg" viewBox="0 0 200 220">
+          <path d="M100 20 C60 20 40 50 40 90 L160 90 C160 50 140 20 100 20 Z" fill="#002147" />
+          <polygon points="100,65 125,85 75,85" fill="#00A8E8" />
+          <circle cx="75" cy="55" r="7" fill="#00C49F" />
+          <circle cx="125" cy="55" r="7" fill="#00C49F" />
+          <path d="M35 95 C20 110 15 140 15 200 L185 200 C185 140 180 110 165 95 C145 110 120 120 100 120 C80 120 55 110 35 95 Z" fill="#002147" />
+          <line x1="100" y1="120" x2="100" y2="200" stroke="#00A8E8" stroke-width="4" />
+          <circle cx="100" cy="155" r="12" fill="#00C49F" />
+        </svg>
+        <h3 class="robot-gadget-title">Asistente Insurtech IA</h3>
+        <p class="robot-gadget-desc">Capturamos tu solicitud de manera prioritaria para conectar tu perfil con descuentos exclusivos y convenios institucionales.</p>
       </div>
-    </div>
 
-  </div>
+      <!-- FORMULARIO ULTRA ESTILIZADO Y MÁS COMPACTO -->
+      <div class="b2b-card-container">
+        <div class="b2b-header">
+          <span class="b2b-badge">🏛️ Asesoría Exclusiva & Convenios</span>
+          <h2>Regístrate y Recibe Ofertas</h2>
+          <p>¿Eres una <strong>Empresa, Colegio o Entidad Pública</strong>? O ¿buscas descuentos personales? Déjanos tus datos y te contactaremos en minutos.</p>
+        </div>
 
-  <!-- SCRIPT CON LA LÓGICA DE INTERACCIÓN Y DATOS (6 FAQS POR PRODUCTO) -->
-  <script>
-    const datosSeguros = {
-      auto: {
-        titulo: "Cotiza tu Seguro de Auto Todo Riesgo",
-        subtitulo: "Compara precios y coberturas entre más de 12 aseguradoras líderes en Colombia.",
-        label: "Ingresa la Placa de tu Vehículo",
-        placeholder: "ABC-123",
-        expTitulo: "¿Por qué contratar Seguro de Auto?",
-        expTexto: "El SOAT solo cubre gastos médicos de lesionados. El seguro voluntario Todo Riesgo protege el valor comercial de tu auto por hurto, choques y pérdidas patrimoniales a terceros.",
-        beneficios: [
-          "✓ Cobertura por pérdida parcial o total por hurto o accidente.",
-          "✓ Responsabilidad Civil Extracontractual ante daños a terceros.",
-          "✓ Asistencia en carretera 24/7: Grúa, carro taller, cerrajería y conductor elegido.",
-          "✓ Vehículo de reemplazo durante el tiempo de reparación en taller.",
-          "✓ Asesoría y acompañamiento jurídico inmediato en el lugar del siniestro."
-        ],
-        faqs: [
-          { q: "¿Necesito un seguro todo riesgo si ya tengo el SOAT?", a: "Sí. El SOAT es obligatorio y solo cubre atención médica de personas lesionadas. El seguro todo riesgo paga los repuestos, arreglos de tu auto o el valor comercial completo si te lo roban." },
-          { q: "¿Cuánto cuesta un seguro voluntario de auto en Colombia?", a: "El costo varía según el modelo, año y ciudad. Contamos con opciones desde $1.200.000 COP anuales que puedes diferir en cuotas mensuales." },
-          { q: "¿El seguro de auto cubre si le presto el vehículo a un familiar?", a: "Sí, la gran mayoría de pólizas cubren el siniestro siempre y cuando el conductor tenga licencia vigente y no esté bajo efectos del alcohol." },
-          { q: "¿Qué debo hacer inmediatamente después de tener un accidente?", a: "Debes reportar el choque de inmediato a la línea de asistencia de tu aseguradora sin mover el vehículo hasta que el analista o la policía de tránsito te indiquen." },
-          { q: "¿Qué significa el deducible en un seguro de auto?", a: "Es la suma fija o porcentaje negociado que debes aportar al momento de hacer efectiva la reparación de tu vehículo tras un accidente." },
-          { q: "¿Puedo financiar el valor total de mi póliza?", a: "¡Claro que sí! Ofrecemos pago financiado desde 2 hasta 12 cuotas mensuales con débito automático o tarjeta." }
-        ]
-      },
-      moto: {
-        titulo: "Cotiza tu Seguro para Moto",
-        subtitulo: "Protégete ante hurtos y accidentes con planes diseñados para motociclistas.",
-        label: "Ingresa la Placa de tu Moto",
-        placeholder: "XYZ-12A",
-        expTitulo: "¿Por qué asegurar tu Moto?",
-        expTexto: "Las motos representan más del 60% de la movilidad en Colombia y están expuestas a altos índices de hurto e incapacidad que el SOAT no resarce.",
-        beneficios: [
-          "✓ Cobertura por hurto calificado y pérdida total por daños.",
-          "✓ Responsabilidad Civil Extracontractual en la vía pública.",
-          "✓ Asistencia de remolque en grúa nacional y transporte en taller.",
-          "✓ Amparo de gastos médicos complementarios a los del SOAT.",
-          "✓ Acompañamiento legal ante la fiscalía en accidentes con lesionados."
-        ],
-        faqs: [
-          { q: "¿El seguro de moto cubre si me la roban parqueada en la calle?", a: "Sí, la cobertura de hurto calificado te indemniza por el valor comercial asignado tanto en parqueaderos como en vía pública." },
-          { q: "¿Aseguran motos de bajo y alto cilindraje?", a: "Cotizamos desde motocicletas de 100cc hasta motos de alto cilindraje y turismo con tarifas ajustadas." },
-          { q: "¿Qué diferencia hay entre pérdida parcial y pérdida total?", a: "Pérdida parcial aplica cuando el costo de reparación no supera el 75% del valor de la moto. Si lo supera, se declara pérdida total e indemnizan el valor comercial." },
-          { q: "¿El seguro de moto cubre la grúa si me quedo varado por fallas mecánicas?", a: "Sí, dispones de asistencias de grúa y carro taller las 24 horas a nivel nacional." },
-          { q: "¿Puedo asegurar una moto nueva sin matricular?", a: "Se cotiza inicialmente con la factura de compra y número de chasis, y se activa definitivamente al asignar la placa." },
-          { q: "¿Qué aseguradoras emiten pólizas de moto en Colombia?", a: "Comparamos en tiempo real con Seguros SURA, AXA Colpatria, Mapfre, SBS y Seguros Bolívar." }
-        ]
-      },
-      salud: {
-        titulo: "Cotiza tu Plan de Medicina Prepagada",
-        subtitulo: "Acceso directo a especialistas y clínicas privadas sin filas ni autorizaciones.",
-        label: "Ingresa tu Número de Celular / WhatsApp",
-        placeholder: "311 234 5678",
-        expTitulo: "¿Por qué contratar Medicina Prepagada?",
-        expTexto: "Garantiza atención médica de alta calidad, habitación individual en hospitalización y consultas directas con especialistas sin pasar por médico general.",
-        beneficios: [
-          "✓ Consultas directas con especialistas (pediatría, ginecología, cardiología, etc.).",
-          "✓ Hospitalización en habitación individual en las mejores clínicas del país.",
-          "✓ Urgencias médicas domiciliarias las 24 horas del día.",
-          "✓ Cobertura de maternidad y amparo al recién nacido desde el primer día.",
-          "✓ Exámenes diagnósticos de alta tecnología sin autorizaciones demoradas."
-        ],
-        faqs: [
-          { q: "¿Qué diferencia hay entre la EPS y la Medicina Prepagada?", a: "La EPS es el sistema básico obligatorio. La Medicina Prepagada es un servicio privado voluntario que brinda atención prioritaria, sin filas y en clínicas de primer nivel." },
-          { q: "¿Puedo afiliar a mis padres o a mis hijos en la misma póliza?", a: "Sí, puedes armar un plan familiar colectivo beneficiándote de tarifas grupales con descuento." },
-          { q: "¿Existen periodos de carencia al ingresar?", a: "Las urgencias médicas quedan cubiertas de inmediato. Ciertas cirugías programadas o partos requieren un tiempo mínimo de antigüedad en la póliza." },
-          { q: "¿La medicina prepagada cubre exámenes de alta tecnología?", a: "Sí, incluye tomografías, resonancias y procedimientos de diagnóstico avanzado con acceso rápido." },
-          { q: "¿Qué clínicas están disponibles en el convenio?", a: "Tendrás acceso a redes como la Clínica Country, Marly, Foscal, Imbanaco y las mejores instituciones del país." },
-          { q: "¿Tengo cobertura internacional si viajo por vacaciones?", a: "Muchos de nuestros planes incluyen asistencia médica de emergencia internacional sin costo adicional." }
-        ]
-      },
-      vida: {
-        titulo: "Cotiza tu Seguro de Vida Familiar",
-        subtitulo: "Respaldo económico de libre destinación para garantizar el futuro de tus seres queridos.",
-        label: "Ingresa tu Celular o Cédula",
-        placeholder: "311 234 5678",
-        expTitulo: "¿Por qué es clave un Seguro de Vida?",
-        expTexto: "Un seguro de vida no es un gasto, es la garantía de que tu familia mantendrá su nivel de vida y pagará deudas o matrículas si llegas a faltar o sufres invalidez.",
-        beneficios: [
-          "✓ Capital inembargable de libre destinación entregado a tus beneficiarios.",
-          "✓ Indemnización por Incapacidad Total y Permanente por enfermedad o accidente.",
-          "✓ Anticipo de suma asegurada en vida por diagnóstico de enfermedades graves.",
-          "✓ Saneamiento directo de créditos hipotecarios y deudas bancarias.",
-          "✓ Auxilio para gastos funerarios e indemnización adicional por accidente."
-        ],
-        faqs: [
-          { q: "¿El dinero del seguro de vida entra en juicio de sucesión?", a: "No, el dinero de un seguro de vida es inembargable y se entrega directamente a los beneficiarios designados en pocos días." },
-          { q: "¿Quiénes pueden ser mis beneficiarios?", a: "Tú decides libremente a quiénes asignar (cónyuge, hijos, padres, hermanos) y en qué porcentajes repartir el capital." },
-          { q: "¿Puedo contratar un seguro de vida si tengo alguna enfermedad previa?", a: "Se realiza una declaración de salud digital. Según el diagnóstico, la aseguradora aprueba la póliza estándar o con condiciones especiales." },
-          { q: "¿Hasta qué edad puedo contratar una póliza de vida?", a: "Normalmente la edad límite de ingreso es entre los 60 y 65 años, permitiendo permanencia en muchos casos hasta los 80 años." },
-          { q: "¿Qué sucede con las deudas que tengo en los bancos si fallezco?", a: "El capital del seguro salda las deudas bancarias respaldadas o le otorga la liquidez a tu familia para cancelarlas." },
-          { q: "¿Puedo modificar mis beneficiarios más adelante?", a: "Sí, puedes actualizar la lista de beneficiarios y porcentajes en cualquier momento notificando a la agencia." }
-        ]
-      },
-      estudiantil: {
-        titulo: "Cotiza tu Seguro Estudiantil / Viajes",
-        subtitulo: "Protección médica integral para estudiantes, universitarios y asistencia en viajes internacionales.",
-        label: "Ingresa tu Celular o WhatsApp",
-        placeholder: "311 234 5678",
-        expTitulo: "¿Por qué contratar Seguro Estudiantil?",
-        expTexto: "Ofrece respaldo completo por accidentes en actividades académicas, prácticas profesionales, laboratorios y salidas de campo en Colombia o el exterior.",
-        beneficios: [
-          "✓ Cobertura por accidentes personales dentro y fuera del campus universitario.",
-          "✓ Asistencia médica internacional con montos mínimos exigidos por embajadas.",
-          "✓ Renta educacional que garantiza el pago de matrícula ante invalidez o fallecimiento del acudiente.",
-          "✓ Expedición de certificación oficial válida para prácticas profesionales y pasantías.",
-          "✓ Descuentos especiales para la comunidad de estudiantes y egresados de CampusLA."
-        ],
-        faqs: [
-          { q: "¿Sirve este seguro para trámites de matrícula o prácticas universitarias?", a: "Sí, emitimos la certificación oficial requerida por instituciones educativas y colegios en Colombia." },
-          { q: "¿Qué cubre la asistencia internacional de viajes para estudiantes?", a: "Cubre consultas médicas por enfermedad repentina, accidentes, medicamentos, repatriación y pérdidas de equipaje." },
-          { q: "¿Aplica si viajo por intercambio académico o beca al exterior?", a: "Sí, tenemos coberturas adaptadas a la zona Schengen de Europa, Estados Unidos, Canadá y Latinoamérica." },
-          { q: "¿El seguro cubre accidentes durante la práctica de deportes universitarios?", a: "Sí, cubre urgencias médicas y hospitalarias por accidentes durante torneos y prácticas deportivas." },
-          { q: "¿Qué es la cobertura de renta educacional?", a: "Garantiza el pago de las matrículas restantes para que el estudiante termine sus estudios si el acudiente llega a faltar." },
-          { q: "¿Cuánto tarda la entrega de la certificación digital?", a: "Se genera y envía en formato PDF a tu correo y WhatsApp en menos de 15 minutos tras la validación." }
-        ]
-      },
-      pyme: {
-        titulo: "Cotiza el Seguro para tu Empresa / Pyme",
-        subtitulo: "Protege las instalaciones, inventarios, maquinaria y patrimonio de tu negocio.",
-        label: "Ingresa tu Celular o NIT",
-        placeholder: "311 234 5678",
-        expTitulo: "¿Por qué asegurar tu Negocio?",
-        expTexto: "Un incendio, inundación o robo puede destruir el capital de trabajo de años. El seguro Pyme blinda la continuidad de tu empresa ante imprevistos.",
-        beneficios: [
-          "✓ Cobertura Todo Riesgo Daño Material para inventarios, muebles y maquinaria.",
-          "✓ Responsabilidad Civil Extracontractual por daños o lesiones a clientes o terceros.",
-          "✓ Amparo contra hurto calificado, sustracción y actos malintencionados.",
-          "✓ Protección de equipos electrónicos, cómputo y herramientas de trabajo.",
-          "✓ Asistencia de emergencia Pyme: Plomería, electricidad y cerrajería empresarial 24/7."
-        ],
-        faqs: [
-          { q: "¿Qué ampara la cobertura de Todo Riesgo Daño Material?", a: "Protege la edificación y los bienes internos de tu Pyme contra terremoto, incendio, explosión, azote de agua e inundación." },
-          { q: "¿El seguro Pyme cubre si un cliente se lesiona dentro de mi local comercial?", a: "Sí, la sección de Responsabilidad Civil Extracontractual paga las indemnizaciones y gastos médicos exigidos por terceros." },
-          { q: "¿Se pueden asegurar mercancías en tránsito o inventarios variables?", a: "Sí, adaptamos los límites asegurados según el volumen pico de inventario de tu negocio durante el año." },
-          { q: "¿Qué requisitos piden para asegurar un local comercial?", a: "Datos básicos del NIT, dirección, actividad económica y declaración estimada del valor de tus enseres y mercancías." },
-          { q: "¿El seguro Pyme cubre el lucro cesante?", a: "Puedes adicionar el amparo de lucro cesante para recibir un ingreso mensual si el negocio debe cerrar temporalmente por un siniestro." },
-          { q: "¿Sirve este seguro para cumplir contratos con clientes corporativos?", a: "Sí, expedimos los certificados de Responsabilidad Civil requeridos en licitaciones y contratos comerciales." }
-        ]
-      },
-      hogar: {
-        titulo: "Cotiza tu Seguro de Hogar & Contenidos",
-        subtitulo: "Protección integral para tu vivienda y enseres ante terremoto, incendio o hurto.",
-        label: "Ingresa tu Número de Celular",
-        placeholder: "311 234 5678",
-        expTitulo: "¿Por qué asegurar tu Hogar?",
-        expTexto: "Tu vivienda es tu patrimonio más valioso. Un seguro de hogar protege la edificación y tus pertenencias personales con asistencias continuas.",
-        beneficios: [
-          "✓ Cobertura de estructura (muros y techo) ante terremoto, incendio y explosión.",
-          "✓ Protección de contenidos: Electrodomésticos, muebles y objetos de valor contra hurto.",
-          "✓ Asistencia domiciliaria 24/7: Servicios de plomería, electricidad, cerrajería y vidriería.",
-          "✓ Cobertura de Responsabilidad Civil Familiar por daños causados a vecinos o terceros.",
-          "✓ Gastos de arrendamiento temporal si tu casa queda inhabitable por un siniestro."
-        ],
-        faqs: [
-          { q: "¿Puedo contratar un seguro de hogar si vivo en arriendo?", a: "Sí, puedes asegurar únicamente tus pertenencias personales, electrodomésticos y muebles bajo la modalidad de 'Contenidos'." },
-          { q: "¿El seguro de hogar cubre si se rompe un tubo de agua y se daña el piso?", a: "Sí, ampara los daños causados por anegamiento o rotura accidental de tuberías internas." },
-          { q: "¿La póliza cubre los daños causados por mi mascota a un vecino?", a: "Sí, la Responsabilidad Civil Familiar ampara los daños o lesiones ocasionadas por mascotas dentro o fuera de la vivienda." },
-          { q: "¿Qué debo hacer para usar el servicio de cerrajería o plomería de emergencia?", a: "Llamas a la línea 24/7 de la aseguradora y un técnico especializado asistirá a tu hogar sin cobro directo." },
-          { q: "¿El seguro cubre si me roban la bicicleta o el computador fuera de casa?", a: "Muchas pólizas incluyen el amparo fuera del predio para objetos personales portátiles como laptops y bicicletas." },
-          { q: "¿El seguro de hogar exige avalúo comercial del inmueble?", a: "No es obligatorio. Se toma el valor de reconstrucción por metro cuadrado acordado con la compañía." }
-        ]
-      },
-      arrendamiento: {
-        titulo: "Cotiza tu Póliza de Arrendamiento",
-        subtitulo: "Garantiza el pago oportuno de los cánones de arrendamiento, administración y servicios públicos.",
-        label: "Ingresa tu Celular o Cédula",
-        placeholder: "311 234 5678",
-        expTitulo: "¿Por qué contratar Póliza de Arrendamiento?",
-        expTexto: "Elimina el riesgo de no pago. La aseguradora te gira mensualmente el valor del arriendo sin importar si el inquilino entra en mora.",
-        beneficios: [
-          "✓ Garantía del pago mensual del canon de arrendamiento sin retrasos.",
-          "✓ Cobertura del pago de cuotas de administración e impuestos adeudados.",
-          "✓ Cobertura del pago de servicios públicos adeudados por el arrendatario.",
-          "✓ Asistencia y representación jurídica gratuita para el proceso de restitución del inmueble.",
-          "✓ Estudio digital de crédito del arrendatario sin costo para el propietario."
-        ],
-        faqs: [
-          { q: "¿Qué pasa si el inquilino se retrasa en el pago del arriendo?", a: "Notificas a la aseguradora y esta te desembolsa el valor del canon adeudado mientras gestiona el cobro con el inquilino." },
-          { q: "¿Cuánto tiempo se demora el estudio del arrendatario?", a: "El estudio digital de capacidad de pago se completa en menos de 24 horas laborables sin papelería física." },
-          { q: "¿Quién asume el costo de la póliza de arrendamiento?", a: "Habitualmente el costo se negocia entre las partes o lo asume el inquilino como requisito para la entrega del inmueble." },
-          { q: "¿Qué documentos se solicitan al inquilino y deudor solidario?", a: "Cédula, certificación laboral o extractos bancarios que demuestren ingresos equivalentes al doble o triple del canon." },
-          { q: "¿La póliza cubre los servicios públicos que deje debiendo el inquilino al desocupar?", a: "Sí, siempre y cuando se adicione el amparo de servicios públicos adeudados en la carátula de la póliza." },
-          { q: "¿Qué trámite debo hacer para iniciar la restitución del inmueble por mora?", a: "Los abogados de la aseguradora inician el trámite judicial de restitución de bien inmueble sin costos de honorarios para ti." }
-        ]
-      }
-    };
-
-    let productoActual = 'auto';
-
-    function openProductDetail(tipo) {
-      productoActual = tipo;
-      const info = datosSeguros[tipo] || datosSeguros.auto;
-
-      // Cargar Validador
-      document.getElementById('val-titulo').innerText = info.titulo;
-      document.getElementById('val-subtitulo').innerText = info.subtitulo;
-      document.getElementById('val-label').innerText = info.label;
-      const input = document.getElementById('val-input');
-      input.placeholder = info.placeholder;
-      input.value = '';
-
-      // Cargar Explicación
-      document.getElementById('exp-titulo').innerText = info.expTitulo;
-      document.getElementById('exp-texto').innerText = info.expTexto;
-      
-      const lista = document.getElementById('exp-lista');
-      lista.innerHTML = '';
-      info.beneficios.forEach(b => {
-        lista.innerHTML += `<li>${b}</li>`;
-      });
-
-      // Cargar las 6 FAQs específicas con formato acordeón desplegable
-      document.getElementById('faq-titulo').innerText = `Preguntas Frecuentes sobre ${tipo.toUpperCase()}`;
-      const faqBox = document.getElementById('faq-contenedor');
-      faqBox.innerHTML = '';
-      
-      info.faqs.forEach(f => {
-        faqBox.innerHTML += `
-          <div class="faq-accordion-item">
-            <button class="faq-question-btn" onclick="toggleFaqAccordion(this)">
-              <span>${f.q}</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer-content">
-              <p>${f.a}</p>
+        <form id="form-b2b-registro" onsubmit="procesarRegistroB2B(event)">
+          <div class="b2b-grid">
+            
+            <div class="b2b-group">
+              <label for="b2b-tipo-perfil">Perfil *</label>
+              <select id="b2b-tipo-perfil" required onchange="adaptarFormularioPerfil(this.value)">
+                <option value="persona">Persona Natural</option>
+                <option value="empresa">Empresa / Pyme</option>
+                <option value="colegio">Colegio / Universidad</option>
+                <option value="gobierno">Entidad del Gobierno</option>
+              </select>
             </div>
+
+            <div class="b2b-group">
+              <label for="b2b-tipo-seguro">Seguro *</label>
+              <select id="b2b-tipo-seguro" required>
+                <option value="" disabled selected>Selecciona...</option>
+                <option value="soat">SOAT Digital</option>
+                <option value="auto">Todo Riesgo Auto</option>
+                <option value="moto">Todo Riesgo Moto</option>
+                <option value="salud">Medicina Prepagada</option>
+                <option value="vida">Seguro de Vida</option>
+                <option value="estudiantil">Estudiantil CampusLA</option>
+                <option value="pyme">Pyme & Empresas</option>
+                <option value="hogar">Seguro de Hogar</option>
+                <option value="arrendamiento">Arrendamiento</option>
+                <option value="otro">Asesoría General</option>
+              </select>
+            </div>
+
+            <div class="b2b-group b2b-full">
+              <label id="lbl-b2b-nombre" for="b2b-nombre">Nombre Completo *</label>
+              <input type="text" id="b2b-nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+
+            <div class="b2b-group">
+              <label id="lbl-b2b-identificacion" for="b2b-identificacion">Cédula *</label>
+              <input type="text" id="b2b-identificacion" placeholder="10203040" required>
+            </div>
+
+            <div class="b2b-group">
+              <label for="b2b-celular">WhatsApp *</label>
+              <input type="tel" id="b2b-celular" placeholder="311 234 5678" required>
+            </div>
+
+            <div class="b2b-group">
+              <label for="b2b-email">Correo *</label>
+              <input type="email" id="b2b-email" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="b2b-group">
+              <label for="b2b-ciudad">Ciudad *</label>
+              <input type="text" id="b2b-ciudad" placeholder="Bogotá / Tunja" required>
+            </div>
+
           </div>
-        `;
-      });
 
-      // Mostrar la sección y hacer scroll suave hacia ella
-      const sec = document.getElementById('section-validador-detalle');
-      sec.style.display = 'block';
-      sec.scrollIntoView({ behavior: 'smooth' });
-    }
+          <div class="b2b-legal">
+            <input type="checkbox" id="b2b-habeas" required checked>
+            <label for="b2b-habeas">
+              Autorizo el tratamiento de mis datos conforme a la <strong>Ley 1581 de 2012</strong> (Colombia) para recibir cotizaciones y ofertas de Seguros de las Américas.
+            </label>
+          </div>
 
-    function cerrarValidador() {
-      document.getElementById('section-validador-detalle').style.display = 'none';
-      document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
-    }
+          <button type="submit" class="btn-b2b-submit" id="btn-b2b-action">
+            📩 Solicitar Asesoría y Descuentos →
+          </button>
+        </form>
+      </div>
 
-    function toggleFaqAccordion(button) {
-      const item = button.parentElement;
-      const isActive = item.classList.contains('active');
+    </div>
+  </section>
 
-      // Cierra los demás
-      document.querySelectorAll('.faq-accordion-item').forEach(el => {
-        el.classList.remove('active');
-      });
+  <!-- 4. COTIZADOR INTEGRADO MULTI-PASO (9 CATEGORÍAS EN GRILLA 3X3) -->
+  <section class="flow-container" id="cotizador-sec">
 
-      // Si no estaba activo, lo abre
-      if (!isActive) {
-        item.classList.add('active');
-      }
-    }
+    <!-- BARRA DE PASOS (STEPPER) -->
+    <div class="stepper-bar">
+      <div class="step-node active" id="node-step-1">
+        <div class="step-number-node">1</div>
+        <span>Selección</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-node" id="node-step-2">
+        <div class="step-number-node">2</div>
+        <span>Datos & Registro</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-node" id="node-step-3">
+        <div class="step-number-node">3</div>
+        <span>Cotización & Pago</span>
+      </div>
+    </div>
 
-    function procesarCotizacion(e) {
-      e.preventDefault();
-      const val = document.getElementById('val-input').value;
-      const num = "573112306647";
-      const msg = `Hola, Seguros de las Américas 👋%0ADeseo cotizar mi seguro de *${productoActual.toUpperCase()}*.%0A📌 Dato: ${val}`;
-      window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
-    }
-  </script>
+    <!-- PASO 1: GRILLA DE LAS 9 TARJETAS DE SEGUROS -->
+    <div class="step-view active-view" id="view-step-1">
+      <div class="quick-quote-grid">
 
-</body>
-</html>
+        <!-- 1. SOAT DIGITAL -->
+        <div class="quote-card">
+          <div class="quote-card-content">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+            </div>
+            <h3 class="quote-title">SOAT Digital</h3>
+            <p class="quote-desc">Seguro obligatorio de accidentes de tránsito. Expedición e impresión inmediata en PDF.</p>
+          </div>
+          <button class="btn-quote" onclick="goToStep2('soat')">Cotizar SOAT →</button>
+        </div>
 
-  <!-- SECCIÓN DE VALOR -->
+        <!-- 2. AUTOS -->
+        <div class="quote-card">
+          <div class="quote-card-content">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4h14v4z"/><circle cx="7.5" cy="14.5" r="1.5"/><circle cx="16.5" cy="14.5" r="1.5"/></svg>
+            </div>
+            <h3 class="quote-title">Seguro de Autos</h3>
+            <p class="quote-desc">Protección Todo Riesgo, daños a terceros, pérdida parcial/total y asistencias 24/7.</p>
+          </div>
+          <button class="btn-quote" onclick="goToStep2('auto')">Cotizar Seguro de Auto →</button>
+        </div>
+
+        <!-- 3. MOTOS -->
+        <div class="quote-card">
+          <div class="quote-card-content">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="16" r="3"/><circle cx="19" cy="16" r="3"/><path d="M12 16h3l3-6h-3l-2-3H9l-1 3H5"/><path d="M12 8V5h3"/></svg>
+            </div>
+            <h3 class="quote-title">Seguro de Motos</h3>
+            <p class="quote-desc">Cobertura especializada por hurto, accidentes, repuestos y responsabilidad civil.</p>
+          </div>
+          <button class="btn-quote" onclick="goToStep2('moto')">Cotizar Seguro de Moto →</button>
+        </div>
+
+        <!-- 4. SALUD -->
+        <div class="quote-card">
+          <div class="quote-card-content">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/><path d="M12 7v6M9 10h6"/></svg>
+            </div>
+            <h3 class="quote-title">Planes de Salud</h3>
+            <p class="quote-desc">Medicina prepagada, acceso directo a especialistas y clínicas de primer nivel.</p>
+          </div>
+          <button class="btn-quote" onclick="goToStep2('salud')">Cotizar Planes de Salud →</button>
+        </div>
+
+        <!-- 5. VIDA -->
+        <div class="quote-card">
+          <div class="quote-card-content">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="quote-title">Seguros de Vida</h3>
+            <p class="quote-desc">Respaldo financiero familiar de libre inversión por invalidez o fallecimiento.</p>
+          </div>
+          <button class="btn-quote" onclick="goToStep2('vida')">Cotizar Seguro de Vida →</button>
+        </div>
+
+        <!-- 6. ESTUDIANTIL / VIAJES -->
+        <div class="quote-card">
+          <div class="quote-card-content">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 6 2 6 2s6 0 6-2v-5"/></svg>
+            </div>
+            <h3 class="quote-title">Estudiantil / Viajes</h3>
+            <p class="quote-desc">Cobertura académica, accidentes universitarios y asistencia médica internacional.</p>
+          </div>
+          <button class="btn-quote" onclick="goToStep2('estudiantil')">Cotizar Estudiantil / Viajes →</button>
+        </div>
+
+        <!-- 7. PYME & EMPRESAS -->
+        <div class="quote-card">
+          <div class="quote-card-content">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2"/></svg>
+            </div>
+            <h3 class="quote-title">Seguros Pyme & Empresas</h3>
+            <p class="quote-desc">Protección para tu negocio contra todo riesgo, daño material y responsabilidad civil.</p>
+          </div>
+          <button class="btn-quote" onclick="goToStep2('pyme')">Cotizar Seguro Pyme →</button>
+        </div>
+
+        <!-- 8. HOGAR -->
+        <div class="quote-card">
+          <div class="quote-card-content">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="quote-title">Seguro de Hogar</h3>
+            <p class="quote-desc">Protección para tu vivienda y contenidos contra terremoto, hurto e incendio.</p>
+          </div>
+          <button class="btn-quote" onclick="goToStep2('hogar')">Cotizar Seguro de Hogar →</button>
+        </div>
+
+        <!-- 9. ARRENDAMIENTO & PÓLIZAS -->
+        <div class="quote-card">
+          <div class="quote-card-content">
+            <div class="quote-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-2-2l2 2M3 11l9-9 9 9v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="2"/></svg>
+            </div>
+            <h3 class="quote-title">Arrendamiento & Pólizas</h3>
+            <p class="quote-desc">Garantía de pago de cánones de arrendamiento, administración y servicios públicos.</p>
+          </div>
+          <button class="btn-quote" onclick="goToStep2('arrendamiento')">Cotizar Arrendamiento →</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PASO 2: FORMULARIO LIMPIO DE CAPTURA & REGISTRO BD -->
+    <div class="step-view" id="view-step-2">
+      <div class="form-card-container">
+        <button class="btn-back-link" onclick="goToStep1()">← Volver a selección</button>
+        
+        <div class="form-header">
+          <h2 id="step2-title">Ingresa tus datos</h2>
+          <p id="step2-subtitle">Ingresa la información requerida para procesar tu cotización en tiempo real.</p>
+        </div>
+
+        <form onsubmit="handleFormSubmission(event)">
+          <div class="inputs-grid">
+            
+            <div class="field-group input-full">
+              <label id="lbl-dynamic-input">Placa o Identificación del Activo *</label>
+              <input type="text" id="inp-dynamic-data" class="highlight-input" placeholder="ABC-123" required oninput="formatUpperStep2(this)">
+            </div>
+
+            <div class="field-group">
+              <label>Nombre Completo *</label>
+              <input type="text" id="inp-nombre" placeholder="Ej. Juan Pérez" required>
+            </div>
+
+            <div class="field-group">
+              <label>Número de Cédula *</label>
+              <input type="number" id="inp-cedula" placeholder="10203040" required>
+            </div>
+
+            <div class="field-group">
+              <label>Celular / WhatsApp *</label>
+              <input type="tel" id="inp-celular" placeholder="311 234 5678" required>
+            </div>
+
+            <div class="field-group">
+              <label>Correo Electrónico *</label>
+              <input type="email" id="inp-email" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="field-group input-full">
+              <label>Ciudad de Residencia / Parqueo *</label>
+              <input type="text" id="inp-ciudad" placeholder="Bogotá, D.C. / Tunja / Medellín" required>
+            </div>
+
+          </div>
+
+          <div class="checkbox-legal">
+            <input type="checkbox" id="chk-habeas" required checked>
+            <label for="chk-habeas">Acepto la política de tratamiento de datos personales (Ley 1581 de 2012) y autorizo el envío de la cotización a mi correo/WhatsApp.</label>
+          </div>
+
+          <button type="submit" class="btn-submit-action">Continuar y Ver Cotización →</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- PASO 3: PARRILLA DE COTIZACIÓN + PASARELA / SELLER -->
+    <div class="step-view" id="view-step-3">
+      <div class="results-layout">
+        
+        <div style="text-align: left;">
+          <button class="btn-back-link" onclick="goToStep2(productoActual)">← Modificar datos ingresados</button>
+        </div>
+
+        <div class="summary-card">
+          <div style="text-align: left;">
+            <span style="font-size:0.75rem; font-weight:800; color:var(--emerald-mint); text-transform:uppercase;">Datos Registrados</span>
+            <h3 id="res-lead-nombre" style="color:var(--primary-navy); font-size:1.2rem; font-weight:900;">Cliente</h3>
+            <p id="res-lead-info" style="font-size:0.85rem; color:var(--text-muted);">CC: -- | Tel: --</p>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size:0.75rem; font-weight:800; color:var(--text-muted); text-transform:uppercase;">Activo / Identificación</span>
+            <div id="res-lead-activo" style="font-size:1.4rem; font-weight:900; color:var(--primary-navy);">ABC-123</div>
+          </div>
+        </div>
+
+        <div class="checkout-option-card">
+          <div style="flex-grow: 1;">
+            <span style="background:rgba(0,168,232,0.1); color:var(--primary-cyan); padding:4px 10px; border-radius:20px; font-weight:800; font-size:0.75rem;">COBERTURA RECOMENDADA</span>
+            <h3 id="res-prod-titulo" style="color:var(--primary-navy); font-size:1.4rem; font-weight:900; margin:8px 0 5px;">Póliza de Protección Integral</h3>
+            <p id="res-prod-desc" style="font-size:0.88rem; color:var(--text-muted); margin-bottom:15px;">Incluye Responsabilidad Civil, asistencias 24/7 y respaldo directo de aseguradora aliada.</p>
+            
+            <ul id="res-prod-beneficios" style="list-style:none; display:flex; flex-direction:column; gap:6px; font-size:0.85rem; font-weight:700; color:var(--dark-text);">
+              <!-- Beneficios inyectados por JS -->
+            </ul>
+          </div>
+
+          <div style="min-width:250px; text-align:center; background:#f8fafc; padding:20px; border-radius:14px; border:1px solid var(--border-color);">
+            <span style="font-size:0.75rem; font-weight:800; color:var(--text-muted);">VALOR ESTIMADO</span>
+            <div id="res-prod-precio" style="font-size:1.8rem; font-weight:900; color:var(--primary-navy); margin:5px 0 15px;">$1.250.000 COP</div>
+            
+            <div id="res-action-button-container">
+              <!-- Botón inyectado dinámicamente -->
+            </div>
+            <p id="res-action-subtitle" style="font-size:0.72rem; color:var(--text-muted); margin-top:8px;">Transacción segura y encriptada</p>
+          </div>
+        </div>
+
+        <div class="faq-section-card" style="background:#fff; border-radius:20px; padding:35px 30px; border:1px solid var(--border-color);">
+          <h3 id="faq-titulo" style="color:var(--primary-navy); font-size:1.3rem; font-weight:900; margin-bottom:20px; text-align:left;">Preguntas Frecuentes</h3>
+          <div id="faq-contenedor" style="display:flex; flex-direction:column;">
+            <!-- FAQs inyectadas por JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 5. SECCIÓN DE PROPUESTA DE VALOR -->
   <section class="value-section">
     <h2 class="value-title">¿Por qué comprar tu póliza a través de<br><span>Seguros de las Américas</span>?</h2>
     <div class="value-grid">
@@ -1013,12 +863,12 @@
           <svg viewBox="0 0 24 24"><path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-5.45 9-12V5l-9-3zm-2 16l-4-4 1.41-1.41L10 15.17l6.59-6.59L18 10l-8 8z"/></svg>
         </div>
         <h3 class="card-heading">Todas las <em>opciones en un solo lugar</em></h3>
-        <p class="card-description">Compara seguros de auto, salud, vida y empresas entre más de 12 aseguradoras líderes en Colombia.</p>
+        <p class="card-description">Compara seguros de auto, SOAT, salud, vida y empresas entre más de 12 aseguradoras líderes en Colombia.</p>
       </div>
 
       <div class="value-card">
         <div class="icon-badge">
-          <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
         </div>
         <h3 class="card-heading">Te asesoramos <em>sin costo</em></h3>
         <p class="card-description">Nuestros expertos revisan tu perfil sin compromisos para ayudarte a elegir la póliza que realmente se ajusta a tus necesidades.</p>
@@ -1042,13 +892,12 @@
     </div>
   </section>
 
-  <!-- 3. SECCIÓN DE ASEGURADORAS ALIADAS (12 CARDS COMPLETAS EN SVG) -->
+  <!-- 6. ASEGURADORAS ALIADAS (12 CARDS SVGS) -->
   <section class="partners-container" id="aliados">
     <h2 class="section-title">Aseguradoras Aliadas</h2>
     <p class="section-subtitle">Compara planes de Sura, AXA Colpatria, Allianz, Bolívar, HDI, Mapfre y más.</p>
 
     <div class="partners-grid">
-      <!-- 1. SURA -->
       <div class="partner-card" title="Seguros SURA">
         <svg viewBox="0 0 200 60">
           <path class="accent-cyan" d="M30 15 C45 10, 55 25, 40 40 C25 55, 10 35, 30 15 Z" />
@@ -1056,7 +905,6 @@
         </svg>
       </div>
 
-      <!-- 2. AXA COLPATRIA -->
       <div class="partner-card" title="AXA Colpatria">
         <svg viewBox="0 0 200 60">
           <rect x="15" y="12" width="35" height="35" rx="4" class="accent-cyan" />
@@ -1065,7 +913,6 @@
         </svg>
       </div>
 
-      <!-- 3. ALLIANZ -->
       <div class="partner-card" title="Allianz">
         <svg viewBox="0 0 200 60">
           <circle cx="28" cy="30" r="16" fill="none" stroke="#64748b" stroke-width="3" class="accent-cyan" />
@@ -1074,7 +921,6 @@
         </svg>
       </div>
 
-      <!-- 4. SEGUROS BOLÍVAR -->
       <div class="partner-card" title="Seguros Bolívar">
         <svg viewBox="0 0 200 60">
           <path d="M15 15 L35 15 L35 45 L15 45 Z" class="accent-cyan" />
@@ -1083,7 +929,6 @@
         </svg>
       </div>
 
-      <!-- 5. MAPFRE -->
       <div class="partner-card" title="MAPFRE">
         <svg viewBox="0 0 200 60">
           <circle cx="25" cy="30" r="12" class="accent-cyan" />
@@ -1091,7 +936,6 @@
         </svg>
       </div>
 
-      <!-- 6. HDI SEGUROS -->
       <div class="partner-card" title="HDI Seguros">
         <svg viewBox="0 0 200 60">
           <text x="15" y="38" font-family="Arial, sans-serif" font-weight="900" font-size="32" class="accent-cyan">HDI</text>
@@ -1099,7 +943,6 @@
         </svg>
       </div>
 
-      <!-- 7. SEGUROS DEL ESTADO -->
       <div class="partner-card" title="Seguros del Estado">
         <svg viewBox="0 0 200 60">
           <path d="M15 20 L35 15 L35 40 L15 45 Z" class="accent-cyan" />
@@ -1108,7 +951,6 @@
         </svg>
       </div>
 
-      <!-- 8. SEGUROS MUNDIAL -->
       <div class="partner-card" title="Seguros Mundial">
         <svg viewBox="0 0 200 60">
           <circle cx="25" cy="30" r="14" fill="none" stroke="#64748b" stroke-width="3" class="accent-cyan" />
@@ -1118,7 +960,6 @@
         </svg>
       </div>
 
-      <!-- 9. EQUIDAD SEGUROS -->
       <div class="partner-card" title="Equidad Seguros">
         <svg viewBox="0 0 200 60">
           <polygon points="15,40 28,15 41,40" class="accent-cyan" />
@@ -1127,7 +968,6 @@
         </svg>
       </div>
 
-      <!-- 10. LIBERTY SEGUROS -->
       <div class="partner-card" title="Liberty Seguros">
         <svg viewBox="0 0 200 60">
           <path d="M15 15 L35 15 L30 45 L15 45 Z" class="accent-cyan" />
@@ -1135,7 +975,6 @@
         </svg>
       </div>
 
-      <!-- 11. COOMEVA -->
       <div class="partner-card" title="Coomeva Medicina Prepagada">
         <svg viewBox="0 0 200 60">
           <path d="M15 30 Q25 15, 35 30 Q25 45, 15 30 Z" class="accent-cyan" />
@@ -1143,7 +982,6 @@
         </svg>
       </div>
 
-      <!-- 12. PAN-AMERICAN LIFE -->
       <div class="partner-card" title="Pan-American Life">
         <svg viewBox="0 0 200 60">
           <rect x="15" y="18" width="24" height="24" rx="12" class="accent-cyan" />
@@ -1154,7 +992,7 @@
     </div>
   </section>
 
-  <!-- ACADEMIA CAMPUSLA MOODLE -->
+  <!-- 7. ACADEMIA CAMPUSLA MOODLE -->
   <section class="academy-section" id="academia">
     <div class="academy-header">
       <span class="academy-tag">🎓 Campus Virtual & Educación Financiera</span>
@@ -1215,7 +1053,7 @@
     </div>
   </section>
 
-  <!-- NEWSROOM SILICON VALLEY -->
+  <!-- 8. NEWSROOM SILICON VALLEY -->
   <section class="newsroom-section">
     <div class="newsroom-hero">
       <div>
@@ -1253,7 +1091,7 @@
               <div class="author-avatar">SA</div>
               <span>Redacción Seguros</span>
             </div>
-            <a href="javascript:void(0)" onclick="openQuoteModal('Artículo IA')" class="btn-read-more">Leer artículo →</a>
+            <a href="#registro-b2b" class="btn-read-more">Leer artículo →</a>
           </div>
         </div>
       </article>
@@ -1271,7 +1109,7 @@
               <div class="author-avatar">CLA</div>
               <span>CampusLA Legal</span>
             </div>
-            <a href="javascript:void(0)" onclick="openQuoteModal('Artículo Salud')" class="btn-read-more">Leer artículo →</a>
+            <a href="#registro-b2b" class="btn-read-more">Leer artículo →</a>
           </div>
         </div>
       </article>
@@ -1289,30 +1127,28 @@
               <div class="author-avatar">SA</div>
               <span>Tech Advisory</span>
             </div>
-            <a href="javascript:void(0)" onclick="openQuoteModal('Artículo Vehículos')" class="btn-read-more">Leer artículo →</a>
+            <a href="#registro-b2b" class="btn-read-more">Leer artículo →</a>
           </div>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- 4. SECCIÓN DE PREGUNTAS FRECUENTES FAQ COMPLETA CON "VER MÁS" -->
+  <!-- 9. PREGUNTAS FRECUENTES FAQ GENERAL INSTITUCIONAL -->
   <section class="faq-section">
     <h2 class="faq-title">Preguntas frecuentes</h2>
 
     <div class="faq-container">
-      <!-- PREGUNTA 1 -->
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Qué es Seguros de las Américas y cómo funciona?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Seguros de las Américas es una agencia profesional de seguros especializada en comparar, gestionar y asesorar la compra de pólizas de auto, vida, salud y empresas entre más de 12 aseguradoras líderes en Colombia. Nos encargamos de encontrar la mejor opción para ti sin costos adicionales.
+          Seguros de las Américas es una agencia profesional de seguros especializada en comparar, gestionar y asesorar la compra de pólizas de auto, SOAT, vida, salud y empresas entre más de 12 aseguradoras líderes en Colombia. Nos encargamos de encontrar la mejor opción para ti sin costos adicionales.
         </div>
       </div>
 
-      <!-- PREGUNTA 2 -->
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Es gratis cotizar en Seguros de las Américas?</span>
@@ -1323,29 +1159,26 @@
         </div>
       </div>
 
-      <!-- PREGUNTA 3 -->
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Qué tipos de seguros puedo cotizar con ustedes?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Puedes cotizar seguros todo riesgo para autos y motos, planes de medicina prepagada y salud, seguros de vida e incapacidad, pólizas estudiantiles, responsabilidad civil y soluciones de protección patrimonial para empresas.
+          Puedes cotizar SOAT digital, seguros todo riesgo para autos y motos, planes de medicina prepagada y salud, seguros de vida e incapacidad, pólizas estudiantiles, responsabilidad civil y soluciones de protección patrimonial para empresas.
         </div>
       </div>
 
-      <!-- PREGUNTA 4 -->
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Cómo comparo precios de seguros con sus asesores?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Solo debes seleccionar la categoría de seguro que necesitas, ingresar tus datos en nuestro cotizador rápido y uno de nuestros expertos analizará en tiempo real las mejores ofertas del mercado para enviártelas directamente por WhatsApp o correo.
+          Solo debes seleccionar la categoría de seguro que necesitas en nuestro cotizador de 3 pasos, ingresar tus datos y nuestro sistema procesará en tiempo real la propuesta directamente para pago en línea o asesoría vía WhatsApp.
         </div>
       </div>
 
-      <!-- PREGUNTA 5 -->
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Puedo financiar mi seguro a cuotas?</span>
@@ -1356,9 +1189,7 @@
         </div>
       </div>
 
-      <!-- PREGUNTAS ADICIONALES (OCULTAS POR DEFECTO) -->
       <div class="faq-extra" id="faq-extra-block">
-        <!-- PREGUNTA 6 -->
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
             <span>¿Me ayudan en caso de tener un siniestro o reclamación?</span>
@@ -1369,7 +1200,6 @@
           </div>
         </div>
 
-        <!-- PREGUNTA 7 -->
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
             <span>¿Tienen convenios o descuentos especiales con CampusLA?</span>
@@ -1382,7 +1212,6 @@
       </div>
     </div>
 
-    <!-- BOTÓN VER MÁS / VER MENOS -->
     <button class="btn-see-more" id="btn-toggle-more" onclick="toggleMoreFaqs()">
       <span id="text-more">Ver más</span>
     </button>
@@ -1394,7 +1223,7 @@
       <h3>Alianza Estratégica con CampusLA</h3>
       <p>Si eres estudiante, docente o egresado de la red <strong>CampusLA (Campus Latinoamérica)</strong>, accede a tarifas preferenciales en pólizas de salud y accidentes estudiantiles.</p>
     </div>
-    <a href="https://www.campuslatinoamerica.edu.co" target="_blank" class="btn-campusla">Ir a CampusLA →</a>
+    <a href="https://www.campuslatinoamerica.edu.co" target="_blank" rel="dofollow" class="btn-campusla">Ir a CampusLA →</a>
   </div>
 
   <!-- FOOTER -->
@@ -1402,14 +1231,16 @@
     <div class="footer-container">
       <div class="footer-col">
         <h4>Seguros de las Américas</h4>
-        <p>Agencia profesional especializada en la gestión integral de riesgos, pólizas de salud, vida y asesoría en reclamaciones.</p>
+        <p>Agencia profesional especializada en la gestión integral de riesgos, pólizas de salud, vida, autos y asesoría en reclamaciones.</p>
       </div>
       <div class="footer-col">
         <h4>Productos</h4>
         <ul>
-          <li><a href="javascript:void(0)" onclick="openQuoteModal('Salud')">Planes de Salud</a></li>
-          <li><a href="javascript:void(0)" onclick="openQuoteModal('Vida')">Seguros de Vida</a></li>
-          <li><a href="javascript:void(0)" onclick="openQuoteModal('Autos')">Todo Riesgo Autos</a></li>
+          <li><a href="javascript:void(0)" onclick="goToStep2('soat')">SOAT Digital</a></li>
+          <li><a href="javascript:void(0)" onclick="goToStep2('salud')">Planes de Salud</a></li>
+          <li><a href="javascript:void(0)" onclick="goToStep2('vida')">Seguros de Vida</a></li>
+          <li><a href="javascript:void(0)" onclick="goToStep2('auto')">Todo Riesgo Autos</a></li>
+          <li><a href="javascript:void(0)" onclick="goToStep2('estudiantil')">Estudiantil CampusLA</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1422,48 +1253,384 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Seguros de las Américas. Todos los derechos reservados | Prototipo desarrollado para evaluación de alianza con CampusLA.</p>
+      <p>Plataforma optimizada y desarrollada con la infraestructura tecnológica de <a href="https://www.campuslatinoamerica.edu.co" target="_blank" rel="dofollow">CampusLA</a> | Seguros de las Américas © 2026. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- MODAL POP-UP COTIZACIÓN -->
-  <div id="modal-cotizacion" class="modal-overlay">
-    <div class="modal-card">
-      <button class="close-btn" onclick="closeQuoteModal()">&times;</button>
-      <h3 id="modal-product-title">Cotizar Seguro</h3>
-      <p>Déjanos tus datos básicos y un asesor especialista se comunicará de inmediato contigo por WhatsApp con las mejores opciones.</p>
-      
-      <form id="lead-form" onsubmit="submitToWhatsApp(event)">
-        <input type="hidden" id="selected-product" value="General">
-        
-        <div class="form-group">
-          <label for="lead-name">Nombre Completo *</label>
-          <input type="text" id="lead-name" placeholder="Ej: Carlos Mendoza" required>
-        </div>
+  <!-- BOTÓN FLOTANTE INTELIGENTE DE WHATSAPP -->
+  <a id="btn-wa-flotante" href="https://wa.me/573112306647?text=Hola,%20deseo%20asesoría%20para%20un%20seguro." target="_blank" class="wa-float-btn" title="Hablar con un Asesor">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" fill="#ffffff" stroke="none"/></svg>
+  </a>
 
-        <div class="form-group">
-          <label for="lead-phone">Número de Celular / WhatsApp *</label>
-          <input type="tel" id="lead-phone" placeholder="Ej: 3112345678" required>
-        </div>
-
-        <div class="form-group">
-          <label for="lead-city">Ciudad *</label>
-          <input type="text" id="lead-city" placeholder="Ej: Bogotá / Tunja / Duitama" required>
-        </div>
-
-        <button type="submit" class="btn-submit-lead">
-          📱 Enviar Cotización por WhatsApp
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- JAVASCRIPT UNIFICADO Y SCRIPT DE INTERACCIÓN -->
+  <!-- SCRIPT UNIFICADO JS -->
   <script>
-    let currentCategory = 'auto';
+    // BASE DE DATOS ESTRUCTURADA DE LOS 9 SEGUROS
+    const datosSeguros = {
+      soat: {
+        tipoVenta: "directa",
+        label: "Ingresa la Placa de tu Vehículo o Moto *",
+        placeholder: "ABC-123",
+        tituloForm: "Comprar SOAT Digital Inmediato",
+        subForm: "Consulta la tarifa oficial RUNT según el cilindraje y modelo de tu vehículo.",
+        precioEst: "Tarifa Oficial RUNT",
+        beneficios: [
+          "✓ Cobertura de gastos médicos y hospitalarios para lesionados en la vía",
+          "✓ Emisión digital e impresión oficial enviada a tu correo y WhatsApp",
+          "✓ Registro automático e inmediato en la plataforma oficial del RUNT"
+        ],
+        faqs: [
+          { q: "¿En cuánto tiempo queda activo mi SOAT en el RUNT?", a: "El registro ante el RUNT y el Ministerio de Transporte es inmediato tras confirmar el pago en línea." },
+          { q: "¿El SOAT cubre los arreglos mecánicos de mi vehículo?", a: "No. El SOAT solo cubre gastos médicos de personas lesionadas. Para cubrir repuestos debes contratar un Seguro Todo Riesgo." },
+          { q: "¿Puedo comprar el SOAT si mi vehículo está vencido?", a: "Sí, puedes renovarlo en línea antes o después de la fecha de vencimiento sin multa por la compra." }
+        ]
+      },
+      auto: {
+        tipoVenta: "consultiva",
+        label: "Ingresa la Placa de tu Vehículo *",
+        placeholder: "ABC-123",
+        tituloForm: "Cotiza tu Seguro de Auto Todo Riesgo",
+        subForm: "Ingresa los datos para realizar la consulta técnica de tu vehículo.",
+        precioEst: "$1.250.000 COP",
+        beneficios: ["✓ Cobertura por pérdida parcial o total por hurto o choque", "✓ Responsabilidad Civil Extracontractual", "✓ Asistencia 24/7 en grúa, cerrajería y conductor elegido"],
+        faqs: [
+          { q: "¿Necesito un seguro todo riesgo si ya tengo el SOAT?", a: "Sí. El SOAT es obligatorio y solo cubre atención médica de personas lesionadas. El seguro todo riesgo paga los repuestos, arreglos de tu auto o el valor comercial si te lo roban." },
+          { q: "¿Cuánto cuesta un seguro voluntario de auto en Colombia?", a: "El costo varía según el modelo, año y ciudad. Contamos con opciones desde $1.200.000 COP anuales." },
+          { q: "¿El seguro de auto cubre si le presto el vehículo a un familiar?", a: "Sí, la gran mayoría de pólizas cubren el siniestro siempre y cuando el conductor tenga licencia vigente." },
+          { q: "¿Qué debo hacer inmediatamente después de tener un accidente?", a: "Debes reportar el choque de inmediato a la línea de asistencia sin mover el vehículo." },
+          { q: "¿Qué significa el deducible en un seguro de auto?", a: "Es la suma fija o porcentaje negociado que debes aportar al momento de hacer efectiva la reparación." },
+          { q: "¿Puedo financiar el valor total de mi póliza?", a: "¡Claro que sí! Ofrecemos pago financiado a cuotas mensuales con débito automático o tarjeta." }
+        ]
+      },
+      moto: {
+        tipoVenta: "consultiva",
+        label: "Ingresa la Placa de tu Moto *",
+        placeholder: "XYZ-12A",
+        tituloForm: "Cotiza tu Seguro para Moto",
+        subForm: "Protégete ante hurtos y accidentes con planes especializados.",
+        precioEst: "$680.000 COP",
+        beneficios: ["✓ Cobertura por hurto calificado y pérdida total por daños", "✓ Responsabilidad Civil Extracontractual en vía pública", "✓ Asistencia de remolque en grúa nacional 24/7"],
+        faqs: [
+          { q: "¿El seguro de moto cubre si me la roban parqueada en la calle?", a: "Sí, la cobertura de hurto calificado te indemniza por el valor comercial asignado." },
+          { q: "¿Aseguran motos de bajo y alto cilindraje?", a: "Cotizamos desde motocicletas de 100cc hasta motos de alto cilindraje." },
+          { q: "¿Qué diferencia hay entre pérdida parcial y pérdida total?", a: "Pérdida parcial aplica cuando el costo de reparación no supera el 75% del valor de la moto." },
+          { q: "¿El seguro de moto cubre la grúa por fallas mecánicas?", a: "Sí, dispones de asistencias de grúa y carro taller las 24 horas a nivel nacional." },
+          { q: "¿Puedo asegurar una moto nueva sin matricular?", a: "Se cotiza inicialmente con la factura de compra y número de chasis." },
+          { q: "¿Qué aseguradoras emiten pólizas de moto en Colombia?", a: "Comparamos en tiempo real con Seguros SURA, AXA Colpatria, Mapfre y Bolívar." }
+        ]
+      },
+      salud: {
+        tipoVenta: "consultiva",
+        label: "Ingresa tu Cédula o Celular *",
+        placeholder: "10203040",
+        tituloForm: "Cotiza Medicina Prepagada",
+        subForm: "Acceso directo a especialistas y clínicas privadas sin filas.",
+        precioEst: "$280.000 COP / mes",
+        beneficios: ["✓ Consultas directas con especialistas sin médico general", "✓ Hospitalización en habitación individual en las mejores clínicas", "✓ Urgencias médicas domiciliarias las 24 horas"],
+        faqs: [
+          { q: "¿Qué diferencia hay entre la EPS y la Medicina Prepagada?", a: "La EPS es el sistema básico obligatorio. La Medicina Prepagada es un servicio privado que brinda atención prioritaria." },
+          { q: "¿Puedo afiliar a mis padres o hijos en la misma póliza?", a: "Sí, puedes armar un plan familiar colectivo beneficiándote de tarifas grupales." },
+          { q: "¿Existen periodos de carencia al ingresar?", a: "Las urgencias médicas quedan cubiertas de inmediato." },
+          { q: "¿La medicina prepagada cubre exámenes de alta tecnología?", a: "Sí, incluye tomografías, resonancias y procedimientos de diagnóstico avanzado." },
+          { q: "¿Qué clínicas están disponibles en el convenio?", a: "Tendrás acceso a redes como la Clínica Country, Marly, Foscal, Imbanaco y más." },
+          { q: "¿Tengo cobertura internacional si viajo por vacaciones?", a: "Muchos de nuestros planes incluyen asistencia médica de emergencia internacional." }
+        ]
+      },
+      vida: {
+        tipoVenta: "directa",
+        label: "Ingresa tu Cédula de Ciudadanía *",
+        placeholder: "10203040",
+        tituloForm: "Cotiza tu Seguro de Vida Familiar",
+        subForm: "Respaldo económico de libre destinación para tu familia.",
+        precioEst: "$95.000 COP / mes",
+        beneficios: ["✓ Capital inembargable de libre destinación para beneficiarios", "✓ Indemnización por Incapacidad Total y Permanente", "✓ Saneamiento directo de créditos hipotecarios y deudas"],
+        faqs: [
+          { q: "¿El dinero del seguro de vida entra en juicio de sucesión?", a: "No, el dinero es inembargable y se entrega directamente a los beneficiarios." },
+          { q: "¿Quiénes pueden ser mis beneficiarios?", a: "Tú decides libremente a quiénes asignar y en qué porcentajes." },
+          { q: "¿Puedo contratar un seguro de vida con alguna enfermedad previa?", a: "Se realiza una declaración de salud digital para evaluación." },
+          { q: "¿Hasta qué edad puedo contratar una póliza de vida?", a: "La edad límite de ingreso es entre los 60 y 65 años." },
+          { q: "¿Qué sucede con las deudas que tengo en los bancos si fallezco?", a: "El capital del seguro salda las deudas bancarias respaldadas." },
+          { q: "¿Puedo modificar mis beneficiarios más adelante?", a: "Sí, puedes actualizar la lista de beneficiarios en cualquier momento." }
+        ]
+      },
+      estudiantil: {
+        tipoVenta: "directa",
+        label: "Ingresa tu Cédula o Celular *",
+        placeholder: "311 234 5678",
+        tituloForm: "Cotiza Seguro Estudiantil / Viajes",
+        subForm: "Protección médica integral para estudiantes de CampusLA y convenios.",
+        precioEst: "$120.000 COP",
+        beneficios: ["✓ Cobertura por accidentes personales dentro y fuera del campus", "✓ Asistencia médica internacional exigida por embajadas", "✓ Certificación oficial válida para prácticas profesionales en CampusLA"],
+        faqs: [
+          { q: "¿Sirve este seguro para trámites de matrícula o prácticas?", a: "Sí, emitimos la certificación oficial requerida por CampusLA y universidades en Colombia." },
+          { q: "¿Qué cubre la asistencia internacional de viajes?", a: "Cubre consultas médicas por enfermedad repentina, accidentes y medicamentos." },
+          { q: "¿Aplica si viajo por intercambio académico?", a: "Sí, tenemos coberturas adaptadas a la zona Schengen de Europa, EE.UU. y Latam." },
+          { q: "¿El seguro cubre accidentes en deportes universitarios?", a: "Sí, cubre urgencias médicas y hospitalarias durante prácticas deportivas." },
+          { q: "¿Qué es la cobertura de renta educacional?", a: "Garantiza el pago de matrículas restantes si el acudiente llega a faltar." },
+          { q: "¿Cuánto tarda la entrega de la certificación digital?", a: "Se genera y envía en formato PDF a tu correo y WhatsApp en minutos." }
+        ]
+      },
+      pyme: {
+        tipoVenta: "consultiva",
+        label: "Ingresa el NIT de tu Empresa o Cédula *",
+        placeholder: "900.123.456-1",
+        tituloForm: "Cotiza el Seguro para tu Pyme",
+        subForm: "Protege las instalaciones, inventarios y equipos de tu negocio.",
+        precioEst: "$1.850.000 COP / año",
+        beneficios: ["✓ Cobertura Todo Riesgo Daño Material para inventario y maquinaria", "✓ Responsabilidad Civil Extracontractual por daños a terceros", "✓ Amparo contra hurto calificado y sustracción"],
+        faqs: [
+          { q: "¿Qué ampara la cobertura de Todo Riesgo Daño Material?", a: "Protege la edificación e inventarios contra terremoto, incendio y explosión." },
+          { q: "¿El seguro Pyme cubre si un cliente se lesiona dentro del local?", a: "Sí, la sección de Responsabilidad Civil paga las indemnizaciones requeridas." },
+          { q: "¿Se pueden asegurar mercancías o inventarios variables?", a: "Sí, adaptamos los límites según el volumen pico de inventario." },
+          { q: "¿Qué requisitos piden para asegurar un local comercial?", a: "Datos básicos del NIT, dirección, actividad económica y declaración estimada." },
+          { q: "¿El seguro Pyme cubre el lucro cesante?", a: "Puedes adicionar el amparo para recibir un ingreso si debes cerrar temporalmente." },
+          { q: "¿Sirve este seguro para cumplir contratos corporativos?", a: "Sí, expedimos los certificados requeridos en licitaciones y contratos." }
+        ]
+      },
+      hogar: {
+        tipoVenta: "directa",
+        label: "Ingresa tu Celular o Dirección del Inmueble *",
+        placeholder: "311 234 5678",
+        tituloForm: "Cotiza tu Seguro de Hogar & Contenidos",
+        subForm: "Protección integral para tu vivienda y enseres ante imprevistos.",
+        precioEst: "$450.000 COP / año",
+        beneficios: ["✓ Cobertura de estructura (muros y techo) ante terremoto e incendio", "✓ Protección de contenidos: Electrodomésticos y muebles contra hurto", "✓ Asistencia domiciliaria 24/7: Plomería, cerrajería y electricidad"],
+        faqs: [
+          { q: "¿Puedo contratar un seguro de hogar si vivo en arriendo?", a: "Sí, puedes asegurar únicamente tus pertenencias bajo la modalidad de 'Contenidos'." },
+          { q: "¿El seguro cubre si se rompe un tubo de agua y se daña el piso?", a: "Sí, ampara los daños causados por rotura accidental de tuberías internas." },
+          { q: "¿La póliza cubre daños causados por mi mascota a un vecino?", a: "Sí, la Responsabilidad Civil Familiar ampara daños ocasionados por mascotas." },
+          { q: "¿Qué debo hacer para usar el servicio de cerrajería o plomería?", a: "Llamas a la línea 24/7 de la aseguradora y un técnico asistirá a tu hogar." },
+          { q: "¿El seguro cubre si me roban el computador fuera de casa?", a: "Muchas pólizas incluyen amparo fuera del predio para equipos portátiles." },
+          { q: "¿El seguro de hogar exige avalúo comercial del inmueble?", a: "No es obligatorio. Se toma el valor de reconstrucción negociado." }
+        ]
+      },
+      arrendamiento: {
+        tipoVenta: "consultiva",
+        label: "Ingresa la Cédula del Arrendatario / Propietario *",
+        placeholder: "10203040",
+        tituloForm: "Cotiza tu Póliza de Arrendamiento",
+        subForm: "Garantiza el pago oportuno de cánones de arriendo y administración.",
+        precioEst: "1.5% del valor del canon",
+        beneficios: ["✓ Garantía del pago mensual del canon de arrendamiento sin mora", "✓ Cobertura del pago de cuotas de administración adeudadas", "✓ Asistencia y representación jurídica para restitución del inmueble"],
+        faqs: [
+          { q: "¿Qué pasa si el inquilino se retrasa en el pago del arriendo?", a: "Notificas a la aseguradora y esta te desembolsa el valor adeudado." },
+          { q: "¿Cuánto tiempo se demora el estudio del arrendatario?", a: "El estudio digital de capacidad de pago se completa en menos de 24 horas." },
+          { q: "¿Quién asume el costo de la póliza de arrendamiento?", a: "Habitualmente el costo lo asume el inquilino como requisito para entrega." },
+          { q: "¿Qué documentos se solicitan al inquilino?", a: "Cédula, certificación laboral o extractos que demuestren ingresos suficientes." },
+          { q: "¿La póliza cubre los servicios públicos adeudados?", a: "Sí, siempre y cuando se adicione el amparo de servicios en la póliza." },
+          { q: "¿Qué trámite debo hacer para iniciar la restitución por mora?", a: "Los abogados de la aseguradora inician el trámite judicial sin costos adicionales." }
+        ]
+      }
+    };
 
+    let productoActual = 'soat';
+    let leadDataCache = null;
+    let currentHeroCategory = 'soat';
+
+    // CONTROLES DE STEPPER
+    function setStepView(stepNumber) {
+      document.querySelectorAll('.step-view').forEach(view => view.classList.remove('active-view'));
+      document.querySelectorAll('.step-node').forEach(node => node.classList.remove('active'));
+
+      document.getElementById(`view-step-${stepNumber}`).classList.add('active-view');
+      
+      for(let i = 1; i <= stepNumber; i++) {
+        document.getElementById(`node-step-${i}`).classList.add('active');
+      }
+
+      document.getElementById('cotizador-sec').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function goToStep1() {
+      setStepView(1);
+    }
+
+    function goToStep2(tipo) {
+      productoActual = tipo;
+      const data = datosSeguros[tipo] || datosSeguros.soat;
+
+      document.getElementById('lbl-dynamic-input').innerText = data.label;
+      document.getElementById('inp-dynamic-data').placeholder = data.placeholder;
+      document.getElementById('inp-dynamic-data').value = '';
+      
+      document.getElementById('step2-title').innerText = data.tituloForm;
+      document.getElementById('step2-subtitle').innerText = data.subForm;
+
+      setStepView(2);
+    }
+
+    function formatUpperStep2(input) {
+      if (productoActual === 'auto' || productoActual === 'moto' || productoActual === 'soat') {
+        input.value = input.value.toUpperCase();
+      }
+    }
+
+    // REGISTRO PASO 2 EN BD
+    function handleFormSubmission(e) {
+      e.preventDefault();
+
+      leadDataCache = {
+        producto: productoActual,
+        activoIdentificacion: document.getElementById('inp-dynamic-data').value,
+        nombre: document.getElementById('inp-nombre').value,
+        cedula: document.getElementById('inp-cedula').value,
+        celular: document.getElementById('inp-celular').value,
+        email: document.getElementById('inp-email').value,
+        ciudad: document.getElementById('inp-ciudad').value,
+        fechaRegistro: new Date().toISOString()
+      };
+
+      guardarLeadEnBD(leadDataCache);
+      actualizarWhatsAppFlotante(leadDataCache);
+      renderStep3Results();
+      setStepView(3);
+    }
+
+    function guardarLeadEnBD(payload) {
+      console.log("🟢 [REGISTRO BD ASÍNCRONO & HOOK API ASEGURADORA]: Lead guardado ->", payload);
+      /* HOOK BASE DE DATOS FUTURE:
+         fetch('https://www.campuslatinoamerica.edu.co/api/leads/save', {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify(payload)
+         });
+      */
+    }
+
+    function actualizarWhatsAppFlotante(lead) {
+      const btn = document.getElementById('btn-wa-flotante');
+      const num = "573112306647";
+      const msg = `Hola, Seguros de las Américas 👋%0AAccedí a la plataforma y deseo atención para mi seguro de *${lead.producto.toUpperCase()}*.%0A📌 *Dato:* ${lead.activoIdentificacion}%0A👤 *Nombre:* ${lead.nombre}%0A📱 *Celular:* ${lead.celular}`;
+      btn.href = `https://wa.me/${num}?text=${msg}`;
+    }
+
+    function renderStep3Results() {
+      const data = datosSeguros[productoActual] || datosSeguros.soat;
+
+      document.getElementById('res-lead-nombre').innerText = leadDataCache.nombre;
+      document.getElementById('res-lead-info').innerText = `CC: ${leadDataCache.cedula} | Tel: ${leadDataCache.celular}`;
+      document.getElementById('res-lead-activo').innerText = leadDataCache.activoIdentificacion;
+
+      document.getElementById('res-prod-titulo').innerText = data.tituloForm;
+      document.getElementById('res-prod-precio').innerText = data.precioEst;
+
+      const bContainer = document.getElementById('res-prod-beneficios');
+      bContainer.innerHTML = '';
+      data.beneficios.forEach(b => {
+        bContainer.innerHTML += `<li>${b}</li>`;
+      });
+
+      const btnContainer = document.getElementById('res-action-button-container');
+      const btnSub = document.getElementById('res-action-subtitle');
+
+      if (data.tipoVenta === 'directa') {
+        btnContainer.innerHTML = `<button onclick="procederPasarelaPago()" class="btn-submit-action" style="padding:12px; font-size:0.92rem;">💳 Pagar Póliza en Línea →</button>`;
+        btnSub.innerText = "Pago 100% seguro vía Wompi / ePayco / PSE";
+      } else {
+        btnContainer.innerHTML = `<button onclick="finalizarConSellerWA()" class="btn-submit-action" style="background:#25D366; padding:12px; font-size:0.92rem;">📲 Finalizar Cotización con Asesor →</button>`;
+        btnSub.innerText = "Un especialista revisará tu solicitud al instante";
+      }
+
+      document.getElementById('faq-titulo').innerText = `Preguntas Frecuentes sobre ${productoActual.toUpperCase()}`;
+      const faqBox = document.getElementById('faq-contenedor');
+      faqBox.innerHTML = '';
+      data.faqs.forEach(f => {
+        faqBox.innerHTML += `
+          <div class="faq-accordion-item">
+            <button class="faq-question-btn" onclick="toggleFaqStep3(this)">
+              <span>${f.q}</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer-content">
+              <p>${f.a}</p>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function toggleFaqStep3(button) {
+      const item = button.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('#faq-contenedor .faq-accordion-item').forEach(el => el.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    }
+
+    function procederPasarelaPago() {
+      alert(`Redirigiendo a Pasarela de Pago Segura para el seguro de ${productoActual.toUpperCase()} por valor de ${datosSeguros[productoActual].precioEst}`);
+    }
+
+    function finalizarConSellerWA() {
+      const num = "573112306647";
+      const msg = `Hola, Seguros de las Américas 👋%0ADeseo finalizar la contratación de mi seguro de *${productoActual.toUpperCase()}*.%0A📌 *Dato:* ${leadDataCache.activoIdentificacion}%0A👤 *Cliente:* ${leadDataCache.nombre}%0A💳 *Valor Estimado:* ${datosSeguros[productoActual].precioEst}`;
+      window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+    }
+
+    // FORMULARIO B2B Y ADAPTACIÓN DE PERFILES
+    function adaptarFormularioPerfil(perfil) {
+      const lblNombre = document.getElementById('lbl-b2b-nombre');
+      const inpNombre = document.getElementById('b2b-nombre');
+      const lblIdentificacion = document.getElementById('lbl-b2b-identificacion');
+      const inpIdentificacion = document.getElementById('b2b-identificacion');
+
+      if (perfil === 'persona') {
+        lblNombre.innerText = "Nombre Completo *";
+        inpNombre.placeholder = "Ej: Juan Pérez";
+        lblIdentificacion.innerText = "Cédula *";
+        inpIdentificacion.placeholder = "10203040";
+      } else if (perfil === 'empresa') {
+        lblNombre.innerText = "Razón Social *";
+        inpNombre.placeholder = "Ej: Innovación S.A.S.";
+        lblIdentificacion.innerText = "NIT Empresa *";
+        inpIdentificacion.placeholder = "900.123.456-1";
+      } else if (perfil === 'colegio') {
+        lblNombre.innerText = "Nombre Institución *";
+        inpNombre.placeholder = "Ej: Colegio San José";
+        lblIdentificacion.innerText = "NIT / DANE *";
+        inpIdentificacion.placeholder = "800.987.654-3";
+      } else if (perfil === 'gobierno') {
+        lblNombre.innerText = "Entidad Pública *";
+        inpNombre.placeholder = "Ej: Alcaldía / Gobernación";
+        lblIdentificacion.innerText = "NIT Entidad *";
+        inpIdentificacion.placeholder = "891.800.123-4";
+      }
+    }
+
+    function procesarRegistroB2B(e) {
+      e.preventDefault();
+
+      const payloadRegistro = {
+        tipoPerfil: document.getElementById('b2b-tipo-perfil').value,
+        tipoSeguroBuscado: document.getElementById('b2b-tipo-seguro').value,
+        nombreRazonSocial: document.getElementById('b2b-nombre').value,
+        identificacionNit: document.getElementById('b2b-identificacion').value,
+        celular: document.getElementById('b2b-celular').value,
+        email: document.getElementById('b2b-email').value,
+        ciudad: document.getElementById('b2b-ciudad').value,
+        habeasDataAceptado: document.getElementById('b2b-habeas').checked,
+        leyAplicada: "Ley 1581 de 2012 (Colombia)",
+        fechaRegistro: new Date().toISOString(),
+        origen: 'Formulario B2B / Asesoría Directa'
+      };
+
+      guardarRegistroEnBD(payloadRegistro);
+      alert(`¡Gracias ${payloadRegistro.nombreRazonSocial}! Tu solicitud para el seguro de ${payloadRegistro.tipoSeguroBuscado.toUpperCase()} ha sido registrada bajo la Ley de Habeas Data (Ley 1581). Un asesor te contactará al instante.`);
+      document.getElementById('form-b2b-registro').reset();
+    }
+
+    function guardarRegistroEnBD(data) {
+      console.log("🟢 [REGISTRO B2B CON HABEAS DATA LEY 1581 CAPTURADO]:", data);
+      /* HOOK BASE DE DATOS FUTURE:
+         fetch('https://www.campuslatinoamerica.edu.co/api/leads/b2b-save', {
+           method: 'POST',
+           headers: { 'Content-Type': 'application/json' },
+           body: JSON.stringify(data)
+         });
+      */
+    }
+
+    // FUNCIONALIDADES HERO
     function selectTab(button, category) {
-      currentCategory = category;
+      currentHeroCategory = category;
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
 
@@ -1471,68 +1638,37 @@
       const label = document.getElementById('input-label');
       const input = document.getElementById('main-input');
 
-      if (category === 'auto') {
+      if (category === 'soat') {
+        title.innerText = 'Comprar SOAT Digital Inmediato';
+        label.innerText = 'Ingresa la Placa de tu Vehículo o Moto';
+        input.placeholder = 'ABC-123';
+      } else if (category === 'auto') {
         title.innerText = 'Cotiza tu Seguro Todo Riesgo Auto';
         label.innerText = 'Ingresa la Placa de tu Vehículo';
         input.placeholder = 'ABC-123';
-        input.type = 'text';
       } else if (category === 'moto') {
         title.innerText = 'Cotiza tu Seguro para Moto';
         label.innerText = 'Ingresa la Placa de tu Moto';
         input.placeholder = 'XYZ-12A';
-        input.type = 'text';
-      } else if (category === 'salud') {
-        title.innerText = 'Cotiza tu Plan de Salud / Medicina Prepagada';
-        label.innerText = 'Número de Celular o WhatsApp';
-        input.placeholder = '311 234 5678';
-        input.type = 'tel';
       }
     }
 
     function formatPlate(input) {
-      if (currentCategory !== 'salud') {
-        input.value = input.value.toUpperCase();
-      }
+      input.value = input.value.toUpperCase();
     }
 
     function handleQuoteSubmit(e) {
       e.preventDefault();
       const val = document.getElementById('main-input').value;
-      const agentNumber = "573112306647";
-      const msg = `Hola, Seguros de las Américas 👋%0ADeseo cotizar mi seguro de *${currentCategory.toUpperCase()}*.%0A📌 *Dato:* ${val}`;
-      window.open(`https://wa.me/${agentNumber}?text=${msg}`, '_blank');
+      goToStep2(currentHeroCategory);
+      document.getElementById('inp-dynamic-data').value = val.toUpperCase();
     }
 
     function handleSecondaryAction() {
-      const agentNumber = "573112306647";
-      const msg = `Hola, Seguros de las Américas 👋%0AQuiero cotizar un seguro de *${currentCategory.toUpperCase()}* con la ayuda de un asesor.`;
-      window.open(`https://wa.me/${agentNumber}?text=${msg}`, '_blank');
+      goToStep2(currentHeroCategory);
     }
 
-    function openQuoteModal(productName) {
-      document.getElementById('selected-product').value = productName;
-      document.getElementById('modal-product-title').innerText = 'Cotizar: ' + productName;
-      document.getElementById('modal-cotizacion').style.display = 'flex';
-    }
-
-    function closeQuoteModal() {
-      document.getElementById('modal-cotizacion').style.display = 'none';
-    }
-
-    function submitToWhatsApp(e) {
-      e.preventDefault();
-      const product = document.getElementById('selected-product').value;
-      const name = document.getElementById('lead-name').value;
-      const phone = document.getElementById('lead-phone').value;
-      const city = document.getElementById('lead-city').value;
-
-      const agentNumber = "573112306647";
-      const message = `Hola, Seguros de las Américas 👋%0AMi nombre es *${name}* y deseo solicitar una cotización de *${product}*.%0A%0A📍 *Ciudad:* ${city}%0A📱 *Contacto:* ${phone}%0A%0AQuedo atento a las opciones disponibles.`;
-
-      window.open(`https://wa.me/${agentNumber}?text=${message}`, '_blank');
-      closeQuoteModal();
-    }
-
+    // FAQS ACORDEÓN INSTITUCIONAL
     function toggleFaq(button) {
       const currentItem = button.parentElement;
       document.querySelectorAll('.faq-item').forEach(item => {
@@ -1551,12 +1687,6 @@
       } else {
         extraBlock.classList.add('show');
         textMore.innerText = 'Ver menos';
-      }
-    }
-
-    window.onclick = function(event) {
-      if (event.target.classList.contains('modal-overlay')) {
-        closeQuoteModal();
       }
     }
   </script>
